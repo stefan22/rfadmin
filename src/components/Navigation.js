@@ -6,7 +6,8 @@ import NavigationRouter from "../router/NavigationRouter";
 import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     "& header": {

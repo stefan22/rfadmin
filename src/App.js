@@ -1,6 +1,6 @@
 import React from "react";
 // comps
-import MainRouter from "./router/Router";
+import MainRouter from "./router/MainRouter";
 import CssBaseline from "@material-ui/core/CssBaseline";
 // theme
 import { ThemeProvider } from "@material-ui/styles";

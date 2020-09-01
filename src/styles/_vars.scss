@@ -29,6 +29,10 @@ $navigationBg: #bdbdbd;
 $tableHeadingBg: #e0e0e0;
 $borderBottomLight: #e5e5e5;
 $darkblue: #2b3f53;
+$formBrdr: #ececec;
+$formBg: #f1f1f1;
+$formFbg: #f4faff;
+$btnBg: #d4d4d4;
 
 
 
@@ -88,18 +92,16 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   sec: $sec;
   black: $black;
   white: $white;
-  snow: $snow;
   navigationBg: $navigationBg;
   black: $black;
-
   lightBlack: $lightBlack;
-  tableHeadingBg: $tableHeadingBg;
   footerBg:  $footerBg;
   borderBottomLight: $borderBottomLight;
-  jumbg: $jumbg;
-  darkblue: $darkblue;
+  formBdr: $formBrdr;
+  formBg: $formBg;
+  formFbg: $formFbg;
+  btnBg: $btnBg;
 
-  // redreg: $redreg;
 
   // box-shadows
   regboxshadow:  $reg-boxshadow;
@@ -107,9 +109,10 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   boxshadow2:  $boxshadow2;
   navboxshadow:  $nav-boxshadow;
 
-  p:  p;
 
-  topliner:  topliner;
+
+
+
 
 
 }

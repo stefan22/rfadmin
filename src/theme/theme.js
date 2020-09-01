@@ -18,14 +18,14 @@ const theme = createMuiTheme({
       pribg: vars.pribg,
       black: vars.black,
       white: vars.white,
-      snow: vars.snow,
       lightblack: vars.lightBlack,
       footerBg: vars.footerBg,
       navigationBg: vars.navigationBg,
-      tableHeadingBg: vars.tableHeadingBg,
       borderBottomLight: vars.borderBottomLight,
-      jumbg: vars.jumbg,
-      darkblue: vars.darkblue
+      formBdr: vars.formBdr,
+      formBg: vars.formBg,
+      formFbg: vars.formFbg,
+      btnBg: vars.btnBg
     },
     boxShadows: {
       reg: vars.regboxshadow
@@ -47,12 +47,12 @@ const theme = createMuiTheme({
   overrides: {
     MuiButton: {
       text: {
-        paddingLeft: "14px",
-        paddingRight: "14px"
+        padding: "8px 16px"
       },
       root: {
         fontWeight: "500",
-        fontSize: ".8rem"
+        fontSize: vars.reg,
+        padding: "8px 16px"
       }
     },
     MuiFab: {

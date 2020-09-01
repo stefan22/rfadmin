@@ -5,13 +5,13 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import * as ROUTES from "../helpers/constants";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   navigationButton: {
     color: theme.palette.colors.white,
-    fontSize: theme.palette.fontSizes.p
+    fontSize: theme.palette.fontSizes.small
   },
   navigationMenu: {
-    lineHeight: 3,
+    lineHeight: 2,
     padding: "0 1rem"
   }
 }));
