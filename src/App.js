@@ -1,14 +1,18 @@
-import React from 'react';
+import React from "react";
+// comps
+import MainRouter from "./router/Router";
+import CssBaseline from "@material-ui/core/CssBaseline";
+// theme
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "./theme";
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-       App
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MainRouter />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

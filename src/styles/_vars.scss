@@ -1,0 +1,131 @@
+/**
+@  vars.scss
+¶  imported into each stylesheet
+¶  =============================
+*/
+
+/**
+@ colors
+*  –––––– */
+
+$pri:  #f44336;
+$pribg: #f8f8ff;
+$sec:   #062886;
+$black: #000000;
+
+// light
+$white: #fffafa;
+$snow: #fffafa;
+$jumbg: #f5f7fb;
+
+// dark
+$black: #484848;
+$lightBlack: #757575;
+
+
+// other
+$footerBg: #e6e6e6;
+$navigationBg: #bdbdbd;
+$tableHeadingBg: #e0e0e0;
+$borderBottomLight: #e5e5e5;
+$darkblue: #2b3f53;
+
+
+
+/**
+@ font-sizes
+* -----------*/
+
+$xlg: 3.5rem;
+$lg: 3.00rem;
+$h1: 2.25rem;
+$h2: 2rem;
+$h3: 1.8rem;
+$h4: 1.55rem;
+$h5: 1.4rem;
+$h6: 1.25rem;
+$p: 1.1rem;
+$reg: 1rem;
+$small: 0.9rem;
+
+
+
+/**
+@  box-shadows
+*  ––––––––––– */
+
+$reg-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+$min-boxshadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+$boxshadow2: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+$nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+
+
+
+
+
+:export {
+
+
+  // fonts
+  h1: $h1;
+  h2: $h2;
+  h3: $h3;
+  h4: $h4;
+  h5: $h5;
+  h6: $h6;
+  p: $p;
+  reg: $reg;
+  small: $small;
+  lg: $lg;
+  xlg: $xlg;
+
+  // colors
+  pri: $pri;
+  pribg: $pribg;
+  sec: $sec;
+  black: $black;
+  white: $white;
+  snow: $snow;
+  navigationBg: $navigationBg;
+  black: $black;
+
+  lightBlack: $lightBlack;
+  tableHeadingBg: $tableHeadingBg;
+  footerBg:  $footerBg;
+  borderBottomLight: $borderBottomLight;
+  jumbg: $jumbg;
+  darkblue: $darkblue;
+
+  // redreg: $redreg;
+
+  // box-shadows
+  regboxshadow:  $reg-boxshadow;
+  minboxshadow:  $min-boxshadow;
+  boxshadow2:  $boxshadow2;
+  navboxshadow:  $nav-boxshadow;
+
+  p:  p;
+
+  topliner:  topliner;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,3 @@
-import colors from "./colors";
-import metrics from "./metrics";
-import icons from "./icons";
+import theme from "./theme";
 
-
-
-export { colors, icons, metrics};
+export default theme;
