@@ -1,0 +1,10 @@
+@import "vars.scss";
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+.header {
+  background-color: invert($primary-color, 80%);
+}
