@@ -50,6 +50,7 @@ $h6: 1.25rem;
 $p: 1.1rem;
 $reg: 1rem;
 $small: 0.9rem;
+$xsmall: .7rem;
 
 
 
@@ -84,6 +85,7 @@ $nav-boxshadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   small: $small;
   lg: $lg;
   xlg: $xlg;
+  xsmall: $xsmall;
 
   // colors
   pri: $pri;

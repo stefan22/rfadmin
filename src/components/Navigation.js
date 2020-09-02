@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Navigation = () => {
+const Navigation = ({ authUser }) => {
   const classes = useStyles();
 
   return (
@@ -32,11 +32,12 @@ const Navigation = () => {
           <IconButton
             edge="start"
             className={classes.menuButton}
-            color="inherit">
+            color="inherit"
+          >
             <MenuIcon />
           </IconButton>
           <div className={classes.title}></div>
-          <NavigationRouter />
+          <NavigationRouter authUser={authUser} />
         </Toolbar>
       </AppBar>
     </div>

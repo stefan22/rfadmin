@@ -43,7 +43,7 @@ class SignupForm extends Component {
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
         console.log(authUser);
-        this.setState({ ...INITIAL_STATE, username });
+        this.setState({ ...INITIAL_STATE });
         return this.props.history.push({
           pathname: ROUTES.HOME,
           username
@@ -71,7 +71,7 @@ class SignupForm extends Component {
       username === "";
 
     return (
-      <section className="signup">
+      <section className="dp-signup">
         <div className="signup-container">
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="username">Username</label>
@@ -127,7 +127,7 @@ class SignupForm extends Component {
 
 const SignupLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Do you have an account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
   </p>
 );
 

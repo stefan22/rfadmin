@@ -37,7 +37,9 @@ const palette = {
     p: vars.p,
     reg: vars.reg,
     lg: vars.lg,
-    xlg: vars.xlg
+    xlg: vars.xlg,
+    small: vars.small,
+    xsmall: vars.xsmall
   },
 
   overrides: {

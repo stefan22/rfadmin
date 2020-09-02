@@ -16,35 +16,74 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const NavigationRouter = () => {
+const AdminRoutes = ({ classes, handleSignout }) => (
+  <>
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.LANDING}>
+        Landing
+      </Link>
+    </Button>
+
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.HOME}>
+        Home
+      </Link>
+    </Button>
+
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.ACCOUNT}>
+        Account
+      </Link>
+    </Button>
+
+    <Button>
+      <Link
+        onClick={handleSignout}
+        className={classes.navigationButton}
+        to={ROUTES.SIGN_OUT}
+      >
+        Signout
+      </Link>
+    </Button>
+  </>
+);
+
+const RegRoutes = ({ classes }) => (
+  <>
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.LANDING}>
+        Landing
+      </Link>
+    </Button>
+
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.SIGN_UP}>
+        Signup
+      </Link>
+    </Button>
+
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.SIGN_IN}>
+        Signin
+      </Link>
+    </Button>
+  </>
+);
+
+
+const NavigationRouter = ({ authUser }) => {
+  console.log("authUser is => ", authUser);
+
+  console.log("authUser authUser is => ", authUser.authUser);
+
   const classes = useStyles();
   return (
     <section className={classes.navigationMenu}>
-      <Button>
-        <Link className={classes.navigationButton} to={ROUTES.LANDING}>
-          Landing
-        </Link>
-      </Button>
-      <Button>
-        <Link className={classes.navigationButton} to={ROUTES.SIGN_UP}>
-          Signup
-        </Link>
-      </Button>
-      <Button>
-        <Link className={classes.navigationButton} to={ROUTES.SIGN_IN}>
-          Signin
-        </Link>
-      </Button>
-      <Button>
-        <Link className={classes.navigationButton} to={ROUTES.HOME}>
-          Home
-        </Link>
-      </Button>
-      <Button>
-        <Link className={classes.navigationButton} to={ROUTES.ACCOUNT}>
-          Account
-        </Link>
-      </Button>
+      {authUser.authUser !== null ? (
+        <AdminRoutes classes={classes} />
+      ) : (
+        <RegRoutes classes={classes} />
+      )}
     </section>
   );
 };

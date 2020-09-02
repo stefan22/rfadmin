@@ -8,17 +8,21 @@ class Firebase {
     this.auth = app.auth();
   }
 
-  // auth methods
+  // auth signup
   doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
 
+  // auth signin
   doSignInWithEmailAndPassword = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
 
+  // auth signout
   doSignOut = () => this.auth.signOut();
 
+  // auth password reset
   doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
+  // auth password update
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 }
 
