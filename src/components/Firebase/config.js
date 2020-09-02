@@ -22,4 +22,6 @@ const prodConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
-export default process.env.NODE_ENV === "production" ? prodConfig : devConfig;
+export default process.env.NODE_ENV === "production"
+  ? prodConfig
+  : devConfig;

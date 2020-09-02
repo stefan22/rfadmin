@@ -1,13 +1,14 @@
 {
   "bracketSpacing": true,
-  "jsxBracketSameLine": true,
-  "printWidth": 80,
+  "jsxBracketSameLine": false,
+  "printWidth": 70,
   "singleQuote": false,
+  "jsxSingleQuote": false,
   "trailingComma": "none",
   "tabWidth": 2,
   "useTabs": false,
   "arrowParens": "avoid",
-  "singleAttributePerLine": true,
+  "singleAttributePerLine": false,
   "no-confusing-arrow": ["error", { "allowParens": false }]
 
 }

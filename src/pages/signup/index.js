@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import { FirebaseContext } from "../../components/Firebase";
+import { compose } from "recompose";
+import { withFirebase } from "../../components/Firebase";
 import "./styles.scss";
 
 import * as ROUTES from "../../helpers/constants";
@@ -9,9 +10,7 @@ import * as ROUTES from "../../helpers/constants";
 const SignupPage = () => (
   <div>
     <h1>Signup Page</h1>
-    <FirebaseContext.Consumer>
-      {firebase => <SignupFormWrapper firebase={firebase} />}
-    </FirebaseContext.Consumer>
+    <SignupFormWrapper />
     <SignupLink />
   </div>
 );
@@ -39,12 +38,16 @@ class SignupForm extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault();
-    const { email, password } = this.state;
+    const { username, email, password } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        this.setState({ ...INITIAL_STATE, authUser });
-        return this.props.history.push(ROUTES.HOME);
+        console.log(authUser);
+        this.setState({ ...INITIAL_STATE, username });
+        return this.props.history.push({
+          pathname: ROUTES.HOME,
+          username
+        });
       })
       .catch(error => {
         this.setState({ error });
@@ -52,8 +55,14 @@ class SignupForm extends Component {
   };
 
   render() {
-    console.log(this);
-    const { username, email, password, confirmPassword, error } = this.state;
+    //console.log(this);
+    const {
+      username,
+      email,
+      password,
+      confirmPassword,
+      error
+    } = this.state;
 
     const isInvalid =
       password !== confirmPassword ||
@@ -102,7 +111,8 @@ class SignupForm extends Component {
               disabled={isInvalid}
               type="submit"
               variant="contained"
-              color="default">
+              color="default"
+            >
               Signup
             </Button>
 
@@ -121,7 +131,10 @@ const SignupLink = () => (
   </p>
 );
 
-const SignupFormWrapper = withRouter(SignupForm);
+const SignupFormWrapper = compose(
+  withRouter,
+  withFirebase
+)(SignupForm);
 
 export default SignupPage;
 

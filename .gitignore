@@ -277,5 +277,10 @@ DerivedData/
 .env.production.local
 
 .vscode
-
+assets/
+showBoxProj.js
 src/fb.js
+
+
+
+/.prettierignore
