@@ -1,5 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
+import { AuthUserContext } from "../components/Session";
+
 // nav route comps
 import { AdminRoutes, RegRoutes } from "../router/NavigationRouter";
 // icons
@@ -34,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Navigation = ({ authUser }) => {
+const Navigation = () => {
   const classes = useStyles();
 
   return (
@@ -52,11 +54,15 @@ const Navigation = ({ authUser }) => {
 
           {
             <section className={classes.navigationMenu}>
-              {authUser.authUser !== null ? (
-                <AdminRoutes classes={classes} />
-              ) : (
-                <RegRoutes classes={classes} />
-              )}
+              <AuthUserContext.Consumer>
+                {authUser =>
+                  authUser ? (
+                    <AdminRoutes classes={classes} />
+                  ) : (
+                    <RegRoutes classes={classes} />
+                  )
+                }
+              </AuthUserContext.Consumer>
             </section>
           }
         </Toolbar>

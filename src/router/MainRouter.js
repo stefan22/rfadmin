@@ -12,10 +12,10 @@ import AccountPage from "../pages/account";
 
 import * as ROUTES from "../helpers/constants";
 
-const MainRouter = authUser => (
+const MainRouter = () => (
   <Router>
     <div className="app-wrapper">
-      <Navigation authUser={authUser} />
+      <Navigation />
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route exact path={ROUTES.SIGN_UP} component={SignupPage} />
       <Route exact path={ROUTES.SIGN_IN} component={SigninPage} />

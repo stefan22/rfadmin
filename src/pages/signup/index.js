@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { compose } from "recompose";
 import { withFirebase } from "../../components/Firebase";
