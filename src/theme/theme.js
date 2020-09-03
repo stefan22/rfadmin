@@ -9,10 +9,10 @@ import blue from "@material-ui/core/colors/blue";
 
 const palette = {
   primary: {
-    main: red[500]
+    main: red[500],
   },
   secondary: {
-    main: indigo[400]
+    main: indigo[400],
   },
 
   colors: {
@@ -22,10 +22,10 @@ const palette = {
     lightblack: grey[700],
     footerBg: grey[200],
     navigationBg: grey[400],
-    formFbg: blue[50]
+    formFbg: blue[50],
   },
   boxShadows: {
-    reg: vars.regboxshadow
+    reg: vars.regboxshadow,
   },
   fontSizes: {
     h1: vars.h1,
@@ -39,30 +39,30 @@ const palette = {
     lg: vars.lg,
     xlg: vars.xlg,
     small: vars.small,
-    xsmall: vars.xsmall
+    xsmall: vars.xsmall,
   },
 
   overrides: {
     MuiButton: {
       text: {
-        padding: "8px 16px"
+        padding: "8px 16px",
       },
       root: {
         fontWeight: "500",
         fontSize: vars.reg,
-        padding: "8px 16px"
-      }
+        padding: "8px 16px",
+      },
     },
     MuiFab: {
       root: {
-        fontWeight: "500"
-      }
-    }
-  }
+        fontWeight: "500",
+      },
+    },
+  },
 };
 
 const theme = createMuiTheme({
-  palette
+  palette,
 });
 
 export default theme;

@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
   navigationMenu: {
     lineHeight: 2,
-    padding: "0 1rem",
+    padding: "0",
   },
 }));
 

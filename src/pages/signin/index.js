@@ -19,7 +19,7 @@ const INITIAL_STATE = {
   email: "",
   password: "",
   error: null,
-  isAdmin: false
+  isAdmin: false,
 };
 
 class SigninForm extends Component {
@@ -30,7 +30,7 @@ class SigninForm extends Component {
 
   handleChange = ev => {
     this.setState({
-      [ev.target.name]: ev.target.value
+      [ev.target.name]: ev.target.value,
     });
   };
 
@@ -101,7 +101,7 @@ const SignUpLink = () => (
 
 const SigninFormWrapper = compose(
   withRouter,
-  withFirebase
+  withFirebase,
 )(SigninForm);
 
 export default SigninPage;

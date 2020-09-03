@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authUser: null
+      authUser: null,
     };
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
         authUser
           ? this.setState({ authUser })
           : this.setState({ authUser: null });
-      }
+      },
     );
   }
 

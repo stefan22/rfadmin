@@ -12,7 +12,7 @@ const SignoutButton = props => (
     onClick={props.firebase.doSignOut}
     color="inherit"
   >
-    <VpnKeyIcon size="small" />
+    <VpnKeyIcon fontSize="small" />
   </IconButton>
 );
 

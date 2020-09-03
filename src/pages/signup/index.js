@@ -21,7 +21,7 @@ const INITIAL_STATE = {
   password: "",
   confirmPassword: "",
   error: null,
-  isAdmin: false
+  isAdmin: false,
 };
 
 class SignupForm extends Component {
@@ -32,7 +32,7 @@ class SignupForm extends Component {
 
   handleChange = ev => {
     this.setState({
-      [ev.target.name]: ev.target.value
+      [ev.target.name]: ev.target.value,
     });
   };
 
@@ -46,7 +46,7 @@ class SignupForm extends Component {
         this.setState({ ...INITIAL_STATE });
         return this.props.history.push({
           pathname: ROUTES.HOME,
-          username
+          username,
         });
       })
       .catch(error => {
@@ -61,7 +61,7 @@ class SignupForm extends Component {
       email,
       password,
       confirmPassword,
-      error
+      error,
     } = this.state;
 
     const isInvalid =
@@ -133,7 +133,7 @@ const SignupLink = () => (
 
 const SignupFormWrapper = compose(
   withRouter,
-  withFirebase
+  withFirebase,
 )(SignupForm);
 
 export default SignupPage;
