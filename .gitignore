@@ -281,6 +281,8 @@ assets/
 showBoxProj.js
 src/fb.js
 
+.prettierignore
+.eslintignore
 
 
 /.prettierignore

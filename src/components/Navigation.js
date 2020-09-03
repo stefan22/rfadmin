@@ -1,25 +1,34 @@
 import React from "react";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
-// comps
-import NavigationRouter from "../router/NavigationRouter";
+// nav route comps
+import { AdminRoutes, RegRoutes } from "../router/NavigationRouter";
 // icons
 import MenuIcon from "@material-ui/icons/Menu";
+// styles
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     "& header": {
-      backgroundColor: theme.palette.colors.navigationBg
+      backgroundColor: theme.palette.colors.navigationBg,
     },
-    marginBottom: "3rem"
+    marginBottom: "3rem",
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+  },
+  navigationButton: {
+    color: theme.palette.colors.white,
+    fontSize: theme.palette.fontSizes.small,
+  },
+  navigationMenu: {
+    lineHeight: 2,
+    padding: "0 1rem",
+  },
 }));
 
 const Navigation = ({ authUser }) => {
@@ -37,7 +46,16 @@ const Navigation = ({ authUser }) => {
             <MenuIcon />
           </IconButton>
           <div className={classes.title}></div>
-          <NavigationRouter authUser={authUser} />
+
+          {
+            <section className={classes.navigationMenu}>
+              {authUser.authUser !== null ? (
+                <AdminRoutes classes={classes} />
+              ) : (
+                <RegRoutes classes={classes} />
+              )}
+            </section>
+          }
         </Toolbar>
       </AppBar>
     </div>

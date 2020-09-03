@@ -1,18 +1,19 @@
 import React from "react";
 import { withFirebase } from "../../components/Firebase";
-import Button from "@material-ui/core/Button";
+// icons
+import IconButton from "@material-ui/core/IconButton";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
+// styles
+import "./styles.scss";
 
-const SignoutButton = props => {
-  console.log(props);
-  return (
-    <Button
-      onClick={props.firebase.doSignout}
-      variant="contained"
-      color="default"
-    >
-      Signout
-    </Button>
-  );
-};
+const SignoutButton = props => (
+  <IconButton
+    className="doSignOut"
+    onClick={props.firebase.doSignOut}
+    color="inherit"
+  >
+    <VpnKeyIcon size="small" />
+  </IconButton>
+);
 
 export default withFirebase(SignoutButton);
