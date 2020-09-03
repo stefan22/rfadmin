@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
   navigationButton: {
     color: theme.palette.colors.white,
     fontSize: theme.palette.fontSizes.small,
+    [theme.breakpoints.up("md")]: {
+      fontSize: theme.palette.fontSizes.small,
+    },
   },
   navigationMenu: {
     lineHeight: 2,

@@ -8,7 +8,7 @@ import "./styles.scss";
 import * as ROUTES from "../../helpers/constants";
 
 const SigninPage = () => (
-  <div>
+  <div className="dp-signin-wrapper">
     <h1>Signin Page</h1>
     <SigninFormWrapper />
     <SignUpLink />
@@ -94,7 +94,7 @@ class SigninForm extends Component {
 }
 
 const SignUpLink = () => (
-  <p>
+  <p className="dp-signup-link">
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );

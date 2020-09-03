@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import { compose } from "recompose";
 import { withFirebase } from "../../components/Firebase";
@@ -8,7 +9,7 @@ import "./styles.scss";
 import * as ROUTES from "../../helpers/constants";
 
 const SignupPage = () => (
-  <div>
+  <div className="dp-signup-wrapper">
     <h1>Signup Page</h1>
     <SignupFormWrapper />
     <SignupLink />
@@ -126,7 +127,7 @@ class SignupForm extends Component {
 }
 
 const SignupLink = () => (
-  <p>
+  <p className="dp-signup-link">
     Do you have an account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
   </p>
 );
