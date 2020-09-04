@@ -286,3 +286,4 @@ src/fb.js
 
 
 /.prettierignore
+*/config.js

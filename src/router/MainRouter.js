@@ -15,7 +15,8 @@ import Navigation from "../components/Navigation";
 import LandingPage from "../pages/landing";
 import SignupPage from "../pages/signup";
 import SigninPage from "../pages/signin";
-import SignoutPage from "../pages/signup";
+import PasswordForget from "../pages/passwordForget";
+import PasswordReset from "../pages/passwordReset";
 import HomePage from "../pages/home";
 import AccountPage from "../pages/account";
 
@@ -58,8 +59,13 @@ const mainRouter = () => (
               />
               <Route
                 exact
-                path={ROUTES.SIGN_OUT}
-                component={SignoutPage}
+                path={ROUTES.PASSWORD_FORGET}
+                component={PasswordForget}
+              />
+              <Route
+                exact
+                path={ROUTES.PASSWORD_RESET}
+                component={PasswordReset}
               />
               <Route exact path={ROUTES.HOME} component={HomePage} />
               <Route
