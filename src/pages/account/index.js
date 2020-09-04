@@ -1,7 +1,7 @@
 import React from "react";
 
 const AccountPage = () => (
-  <div>
+  <div className="dp-account-wrapper">
     <h1>Account Page</h1>
   </div>
 );

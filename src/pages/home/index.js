@@ -8,7 +8,7 @@ const HomePage = props => {
       : false;
 
   return (
-    <div>
+    <div className="dp-home-wrapper">
       <h1>Welcome {greet}</h1>
     </div>
   );
