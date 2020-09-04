@@ -106,7 +106,6 @@ const PasswordForgetLink = () => (
   </p>
 );
 
-
 const SigninFormWrapper = compose(
   withRouter,
   withFirebase,
