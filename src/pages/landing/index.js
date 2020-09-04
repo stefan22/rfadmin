@@ -15,7 +15,7 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="dp-landing-wrapper">
+      <div className="dp-landwrapper">
         <h1>Landing page </h1>
       </div>
     );
