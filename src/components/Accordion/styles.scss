@@ -1,0 +1,62 @@
+@import "../../styles/vars";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+
+/* accordion section */
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* buttons */
+.accordion {
+  background-color: $formBg;
+  color: $black;
+  cursor: pointer;
+  padding: 1.12rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+}
+
+/* active hover */
+.accordion:hover,
+.active {
+  background-color: $formBrdr;
+  color: $white;
+}
+
+/* accordion content title */
+.accordion-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* accordion chevron icon */
+.accordion-icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+/* rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* accordion content panel. */
+.accordion-content {
+  background-color: $white;
+  overflow: auto;
+  transition: max-height 0.6s ease;
+}
+
+/* accordion content text */
+.accordion-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
+}
