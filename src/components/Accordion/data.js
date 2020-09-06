@@ -22,17 +22,12 @@ const accordionData = [
   {
     title: "Authentication HOC",
     content:
-      "It provides authentication for the Firebase built-in authentication methods. It provides authentication for the Firebase built-in authentication methods.",
+      "It provides all of the logic support for FB built-in authentication methods as it tracks current user through out application using React context. It shows different options depending on state of current user. It returns an object when user is authenticated and null when it's not.",
   },
   {
     title: "Authorization HOC",
     content:
-      "Similar to Authentication but it handles user's roles. It provides authentication for the Firebase built-in authentication methods as well. It provides authentication for the Firebase built-in authentication methods",
-  },
-  {
-    title: "Routes",
-    content:
-      "Routes are set in constants js file. constants js file. It will redirect you to home page, if successful. Signin out from Dashboard it will not redirect you to signin.",
+      "Similar to Authentication; however Authorization unlike Authentication, it implements route protection. It checks whether a user is authenticated. If it's not, it will then redirect user to a public route. It uses a HOC to encapsulate logic away from components and it's used by calling withAuthorization on a component.",
   },
   {
     title: "Page animation",
