@@ -39,10 +39,23 @@ class SignupForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault();
     const { username, email, password } = this.state;
+
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
-        console.log(authUser);
+        // create db user
+        return this.props.firebase.user(authUser.user.uid).set(
+          {
+            username,
+            email,
+            //roles,
+          },
+          {
+            merge: true,
+          },
+        );
+      })
+      .then(() => {
         this.setState({ ...INITIAL_STATE });
         return this.props.history.push({
           pathname: ROUTES.HOME,

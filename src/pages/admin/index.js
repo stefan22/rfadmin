@@ -1,7 +1,7 @@
 import React from "react";
 import { withAuthorization } from "../../components/Session";
 
-const HomePage = props => {
+const AdminPage = props => {
   let user = props.history.location.username;
   let greet =
     typeof user === "string"
@@ -9,12 +9,12 @@ const HomePage = props => {
       : false;
 
   return (
-    <div className="dp-home-wrapper">
-      <h1>Home {greet}</h1>
+    <div className="dp-admin-wrapper">
+      <h1>Welcome {greet}</h1>
     </div>
   );
 };
 
-const isAdmin = authUser => !!authUser;
+const isAdmin = authUser => authUser && authUser.roles === "ADMIN";
 
-export default withAuthorization(isAdmin)(HomePage);
+export default withAuthorization(isAdmin)(AdminPage);

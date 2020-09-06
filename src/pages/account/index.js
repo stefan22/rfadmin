@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { withAuthorization } from "../../components/Session";
 
 import * as ROUTES from "../../helpers/constants";
 
@@ -23,4 +24,6 @@ const PasswordResetLink = () => (
   </p>
 );
 
-export default withRouter(AccountPage);
+const isAdmin = authUser => !!authUser;
+
+export default withAuthorization(isAdmin)(AccountPage);
