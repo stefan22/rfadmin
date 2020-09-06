@@ -8,14 +8,23 @@ import * as ROUTES from "../helpers/constants";
 const AdminRoutes = ({ classes }) => (
   <>
     <Button>
-      <Link className={classes.navigationButton} to={ROUTES.LANDING}>
-        Landing
+      <Link
+        className={classes.navigationButton}
+        to={ROUTES.DASHBOARD}
+      >
+        Dashboard
       </Link>
     </Button>
 
     <Button>
       <Link className={classes.navigationButton} to={ROUTES.HOME}>
         Home
+      </Link>
+    </Button>
+
+    <Button>
+      <Link className={classes.navigationButton} to={ROUTES.ADMIN}>
+        Admin
       </Link>
     </Button>
 
@@ -32,8 +41,11 @@ const AdminRoutes = ({ classes }) => (
 const RegRoutes = ({ classes }) => (
   <>
     <Button>
-      <Link className={classes.navigationButton} to={ROUTES.LANDING}>
-        Landing
+      <Link
+        className={classes.navigationButton}
+        to={ROUTES.DASHBOARD}
+      >
+        Dashboard
       </Link>
     </Button>
 

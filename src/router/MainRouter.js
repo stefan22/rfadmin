@@ -12,12 +12,13 @@ import {
 // comps
 import Navigation from "../components/Navigation";
 // pages
-import LandingPage from "../pages/landing";
+import DashboardPage from "../pages/dashboard";
 import SignupPage from "../pages/signup";
 import SigninPage from "../pages/signin";
 import PasswordForget from "../pages/passwordForget";
 import PasswordReset from "../pages/passwordReset";
 import HomePage from "../pages/home";
+import AdminPage from "../pages/admin";
 import AccountPage from "../pages/account";
 
 import * as ROUTES from "../helpers/constants";
@@ -44,8 +45,8 @@ const mainRouter = () => (
             <Switch location={location}>
               <Route
                 exact
-                path={ROUTES.LANDING}
-                component={LandingPage}
+                path={ROUTES.DASHBOARD}
+                component={DashboardPage}
               />
               <Route
                 exact
@@ -68,6 +69,11 @@ const mainRouter = () => (
                 component={PasswordReset}
               />
               <Route exact path={ROUTES.HOME} component={HomePage} />
+              <Route
+                exact
+                path={ROUTES.ADMIN}
+                component={AdminPage}
+              />
               <Route
                 exact
                 path={ROUTES.ACCOUNT}
