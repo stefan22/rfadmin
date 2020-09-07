@@ -30,31 +30,34 @@ class Accordion extends Component {
 
   render() {
     return (
-      <div className="accordion-section">
-        <button
-          className={`accordion ${this.state.active}`}
-          onClick={this.toggleAccordion}
-        >
-          <div className="accordion-title">{this.props.title}</div>
-          <Chevron
-            className={`${this.state.rotate}`}
-            width={10}
-            fill={"#777"}
-          />
-        </button>
-        <div
-          ref={this.content}
-          style={{
-            maxHeight: `${this.state.height}`,
-          }}
-          className="accordion-content"
-        >
-          <p
-            className="accordion-text"
-            dangerouslySetInnerHTML={{ __html: this.props.content }}
-          />
+      <>
+        <h3>{this.props.heading}</h3>
+        <div className="accordion-section">
+          <button
+            className={`accordion ${this.state.active}`}
+            onClick={this.toggleAccordion}
+          >
+            <div className="accordion-title">{this.props.title}</div>
+            <Chevron
+              className={`${this.state.rotate}`}
+              width={10}
+              fill={"#777"}
+            />
+          </button>
+          <div
+            ref={this.content}
+            style={{
+              maxHeight: `${this.state.height}`,
+            }}
+            className="accordion-content"
+          >
+            <p
+              className="accordion-text"
+              dangerouslySetInnerHTML={{ __html: this.props.content }}
+            />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

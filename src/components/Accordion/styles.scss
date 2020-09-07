@@ -60,3 +60,13 @@
   font-size: 14px;
   padding: 18px;
 }
+
+
+.dp-accordionlist h3:nth-child(4n+1) {//1,5,9,13
+    display: flex;
+    color: $black;
+    font-size: $h4;
+    margin: 1rem 0;
+    text-align: left;
+}
+

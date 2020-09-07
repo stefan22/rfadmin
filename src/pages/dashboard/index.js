@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 // comps
 import Accordion from "../../components/Accordion";
+import accordionData from "../../components/Accordion/data";
+// hoc
+import List from "../../helpers/List";
 // styles
 import "./styles.scss";
-
-import accordionData from "../../components/Accordion/data";
 
 const initialState = {
   ready: false,
@@ -20,15 +21,12 @@ class DashboardPage extends Component {
   }
 
   handleClick = e => {
+    // nav column
+    // not being used
     e.preventDefault();
     Array.from(this.titleRef.current.children).forEach(
       itm => (itm.children[0].style.color = "inherit"),
     );
-
-    //let tar = e.target.textContent.split("/")[0].toLowerCase();
-    // this.titleRef.current.querySelector(
-    //   `#page-${tar} h3`,
-    // ).style.color = "red";
   };
 
   render() {
@@ -72,62 +70,11 @@ class DashboardPage extends Component {
                     ref={this.titleRef}
                     className="article-inner-wrapper"
                   >
-                    <section id="page-signin">
-                      <h3>Protected:&not pages</h3>
+                    <section className="dp-accordion-section">
                       <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[0].title}
-                          content={accordionData[0].content}
-                        />
-                      </div>
-
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[1].title}
-                          content={accordionData[1].content}
-                        />
-                      </div>
-                    </section>
-
-                    <section id="page-signout">
-                      <h3>Firebase Component</h3>
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[2].title}
-                          content={accordionData[2].content}
-                        />
-                      </div>
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[3].title}
-                          content={accordionData[3].content}
-                        />
-                      </div>
-                    </section>
-
-                    <section id="page-home">
-                      <h3>Higher Order Components</h3>
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[4].title}
-                          content={accordionData[4].content}
-                        />
-                      </div>
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[5].title}
-                          content={accordionData[5].content}
-                        />
-                      </div>
-                    </section>
-
-                    <section id="page-admin">
-                      <h3>Routes</h3>
-
-                      <div className="dp-accordionlist">
-                        <Accordion
-                          title={accordionData[6].title}
-                          content={accordionData[6].content}
+                        <List
+                          item={Accordion}
+                          items={accordionData}
                         />
                       </div>
                     </section>
