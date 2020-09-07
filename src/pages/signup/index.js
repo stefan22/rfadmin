@@ -44,16 +44,10 @@ class SignupForm extends Component {
       .doCreateUserWithEmailAndPassword(email, password)
       .then(authUser => {
         // create db user
-        return this.props.firebase.user(authUser.user.uid).set(
-          {
-            username,
-            email,
-            //roles,
-          },
-          {
-            merge: true,
-          },
-        );
+        return this.props.firebase.user(authUser.user.uid).set({
+          username,
+          email,
+        });
       })
       .then(() => {
         this.setState({ ...INITIAL_STATE });

@@ -15,6 +15,6 @@ const AdminPage = props => {
   );
 };
 
-const isAdmin = authUser => authUser && authUser.roles === "ADMIN";
+const isAdmin = authUser => authUser && authUser.isAdmin === true;
 
 export default withAuthorization(isAdmin)(AdminPage);
