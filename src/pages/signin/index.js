@@ -29,6 +29,8 @@ class SigninForm extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
+  componentDidMount() {}
+
   handleChange = ev => {
     this.setState({
       [ev.target.name]: ev.target.value,
@@ -40,8 +42,8 @@ class SigninForm extends Component {
     const { email, password } = this.state;
     this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
-      .then(() => {
-        this.setState({ ...INITIAL_STATE });
+      .then(authUser => {
+        this.setState({ ...INITIAL_STATE, user: authUser.uid });
         return this.props.history.push(ROUTES.HOME);
       })
       .catch(error => {

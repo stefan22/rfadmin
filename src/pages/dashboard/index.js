@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 // comps
 import Accordion from "../../components/Accordion";
 import accordionData from "../../components/Accordion/data";
+import { desktopAnimation } from "./DashboardAnimation";
 // hoc
 import List from "../../helpers/List";
 // styles
@@ -20,49 +21,52 @@ class DashboardPage extends Component {
     this.state = { initialState };
   }
 
-  handleClick = e => {
-    // nav column
-    // not being used
-    e.preventDefault();
-    Array.from(this.titleRef.current.children).forEach(
-      itm => (itm.children[0].style.color = "inherit"),
-    );
-  };
+  componentDidMount() {
+    const heading = this.heading;
+    const sideCol = this.sideCol;
+    const ele = this.ele;
+    desktopAnimation(heading, sideCol, ele);
+  }
+
+  handleClick = e => e.preventDefault();
 
   render() {
     return (
       <div className="dp-landwrapper">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <header>
-              <h1>Dashboard</h1>
-              <p>
-                Landing page open to signed and non-signed-in users
-                alike
-              </p>
-            </header>
+            <div ref={heading => (this.heading = heading)}>
+              <header>
+                <h1>Dashboard</h1>
+                <p>
+                  Landing page open to signed and non-signed-in users
+                  alike
+                </p>
+              </header>
+            </div>
           </Grid>
 
           <div className="dp-land-inner">
             <section>
               <Grid item xs={12} md={12} lg={2}>
-                <nav>
+                <nav ref={sideCol => (this.sideCol = sideCol)}>
                   <ul onClick={this.handleClick}>
                     <li>
-                      <a href="#page-protected">Protected pages</a>
+                      <a href="#one">Protected pages</a>
                     </li>
                     <li>
-                      <a href="#page-signout">Section 2</a>
+                      <a href="#two">Section 2</a>
                     </li>
                     <li>
-                      <a href="#page-home">Section 3</a>
+                      <a href="#three">Section 3</a>
                     </li>
                     <li>
-                      <a href="#page-admin">Section 4</a>
+                      <a href="#four">Section 4</a>
                     </li>
                   </ul>
                 </nav>
               </Grid>
+
               <Grid item xs={12} md={12} lg={10}>
                 <article>
                   <h2>About this App</h2>
@@ -72,10 +76,12 @@ class DashboardPage extends Component {
                   >
                     <section className="dp-accordion-section">
                       <div className="dp-accordionlist">
-                        <List
-                          item={Accordion}
-                          items={accordionData}
-                        />
+                        <div ref={ele => (this.ele = ele)}>
+                          <List
+                            item={Accordion}
+                            items={accordionData}
+                          />
+                        </div>
                       </div>
                     </section>
                   </div>
