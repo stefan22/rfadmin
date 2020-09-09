@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup comp matches snapshot when no data entered 1`] = `
+<section
+  className="dp-signup"
+>
+  <div
+    className="signup-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        name="username"
+        onChange={[Function]}
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <label
+        htmlFor="confirmPassword"
+      >
+        Confirm Password
+      </label>
+      <input
+        name="confirmPassword"
+        onChange={[Function]}
+        placeholder="Confirm Password"
+        type="password"
+        value=""
+      />
+      <WithStyles(ForwardRef(Button))
+        color="default"
+        disabled={true}
+        type="submit"
+        variant="contained"
+      >
+        Signup
+      </WithStyles(ForwardRef(Button))>
+    </form>
+  </div>
+  <hr />
+</section>
+`;

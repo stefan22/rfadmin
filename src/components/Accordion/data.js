@@ -3,12 +3,12 @@ const accordionData = [
     heading: "Protected:& Not pages",
     title: "Home/ Account, Admin & Signout",
     content:
-      "To access these three pages you need to first register/signed in. Once registered, both pages: Home and Account become available. Admin page, however it's only reachable with a user role of Admin. Signin out off Dashboard page, it will not redirect back to Signin page, but signing out from Account, it will. This is because protected routes aren't accessible without an account.",
+      "Register/signin to access Home, Account and Admin. Once registered, both pages: Home and Account become available. Admin page, however it's only reachable with a user role of Admin.",
   },
   {
     title: "Dashboard, Signin/ Signup pages",
     content:
-      "Similar to Dashboard, Signup and Signin are open to all users, meaning they're also available once a user signs in. When if successfull, it gets redirected to the Home page. Otherwise, if auth fails it's redirected to Signin page.",
+      "Similar to Dashboard, Signup and Signin are shared pages. Signin out off Dashboard will not redirect back to Signin, but signing out from Account page, it will. This is because protected routes aren't accessible without an account..",
   },
   {
     heading: "Firebase Component",
