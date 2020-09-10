@@ -104,49 +104,38 @@ button {
 }
 
 /* Page Group transition ------------------------------------------ */
+
+
 .fade-appear,
 .fade-enter {
-  opacity: 0;
-  z-index: 1;
-}
-
-.fade-appear-active, .fade-enter.fade-enter-active {
-  opacity: .01;
-  transition: opacity 400ms linear 10ms;
-}
-
-.fade-exit {
   opacity: 1;
+  animation-delay: 0ms;
+  z-index: 20;
 }
+
+
 
 .fade-exit.fade-exit-active {
   opacity: 0;
-  transition: opacity 380ms linear;
+  z-index: -10;
+  animation: fade-out .55s ease-in-out 0ms;
 }
 
-/* tran */
 
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 0.75s linear 150ms;
-}
 .fade-appear-active,.fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 0.75s linear 150ms;
   z-index: 10;
+  animation: fade-in .75s ease-in 0ms;
 }
+
+
+
 .fade-enter-done,
 .fade-exit {
   opacity: 1;
+  z-index: 20;
 }
 
-.dp-landing-wrapper, .dp-signing-wrapper, .dp-signup-wrapper,.dp-home-wrapper,.dp-account-wrapper,.dp-password-wrapper {
-  position: absolute;
-  top: 112px;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
 
 @media only screen and (max-width: 414px) {
   .dp-signup-wrapper {
@@ -154,3 +143,26 @@ button {
   }
 }
 
+
+
+@keyframes fade-out {
+    from { opacity: 1 }
+      to { opacity: 0 }
+}
+
+@keyframes fade-in {
+    from { opacity: 0 }
+      to { opacity: 1 }
+}
+
+
+
+// .fade-exit.fade-exit-active.fade-out {
+//     opacity: 0;
+//     animation-name: fade-out;
+// }
+
+// .fade-enter.fade-enter-active.fade-in {
+//     opacity: 1;
+//     animation-name: fade-in;
+// }

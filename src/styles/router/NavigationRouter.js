@@ -38,29 +38,36 @@ const AdminRoutes = ({ classes }) => (
   </>
 );
 
-const RegRoutes = ({ classes }) => (
-  <>
-    <Button>
-      <Link
-        className={classes.navigationButton}
-        to={ROUTES.DASHBOARD}
-      >
-        Dashboard
-      </Link>
-    </Button>
+const RegRoutes = ({ classes }) => {
+  return (
+    <div>
+      <Button>
+        <Link
+          className={classes.navigationButton}
+          to={ROUTES.DASHBOARD}
+        >
+          Dashboard
+        </Link>
+      </Button>
 
-    <Button>
-      <Link className={classes.navigationButton} to={ROUTES.SIGN_UP}>
-        Signup
-      </Link>
-    </Button>
+      <Button>
+        <Link
+          className={classes.navigationButton}
+          to={ROUTES.SIGN_UP}
+        >
+          Signup
+        </Link>
+      </Button>
 
-    <Button>
-      <Link className={classes.navigationButton} to={ROUTES.SIGN_IN}>
-        Signin
-      </Link>
-    </Button>
-  </>
-);
-
+      <Button>
+        <Link
+          className={classes.navigationButton}
+          to={ROUTES.SIGN_IN}
+        >
+          Signin
+        </Link>
+      </Button>
+    </div>
+  );
+};
 export { AdminRoutes, RegRoutes };

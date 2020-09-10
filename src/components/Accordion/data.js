@@ -19,29 +19,29 @@ const accordionData = [
   {
     title: "React Context API",
     content:
-      "Rather than creating a new Firebase instance off the class, and then having to import it into every component, it sets the context provider in App.js. The consumer context, it's been abstracted and passed within a new HOC so that all it's required now is to call it using 'withFirebase' as needed.",
+      "Rather than creating a new Firebase instance off the class, and then having to import it into every component, it uses React context API. Most of its logic abstracted away and consumed using withFirebase instead.",
   },
   {
     heading: "Higher Order Components",
     title: "Authentication HOC",
     content:
-      "It provides all of the logic support for FB built-in authentication methods as it tracks current user through out application using React context. It shows different options depending on state of current user. It returns an object when user is authenticated and null when it's not.",
+      "It provides all of the logic support for FB built-in authentication methods. It returns an object when user is authenticated and null if it's not.",
   },
   {
     title: "Authorization HOC",
     content:
-      "Similar to Authentication; however Authorization unlike Authentication, it implements route protection. It checks whether a user is authenticated. If it's not, it will then redirect user to a public route. It uses a HOC to encapsulate logic away from components and it's used by calling withAuthorization on a component.",
+      "It implements route protection. It checks whether a user is authenticated. If it's not, it will then redirect user to a public route. It uses a HOC to encapsulate logic away from components and execute by calling withAuthorization on a component.",
   },
   {
     heading: "Other",
     title: "Page animation",
     content:
-      "Page animation requires React CSS transitions and React Transition Group imported within routes and passing location history as an argument to each route. The idea is to place one page on top of another if only for a few miliseconds; which is done by positioning both pages to absolute positioning with CSS. In order to do this, first set the timeout temporarily to a large number like maybe 60 sec (in miliseconds), then using the development console make the  necessary adjustments to both pages.",
+      "Page animation with React Transition Group. React router to pass location, and briefly place one page on top of another with CSS absolute positioning.",
   },
   {
     title: "HOC | re-usable list component",
     content:
-      "List HOC to render these accordion components data. It takes any two given arguments matching the following criteria: a rendering component named item (in this case Accordion.js) and a data array named items; which here it is these accordion's objects data array (data.js).",
+      "List HOC to render these Accordion components. It takes two arguments: a function component named item and a data array called items.",
   },
 ];
 
