@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  useLocation,
 } from "react-router-dom";
 import {
   CSSTransition,
@@ -95,13 +94,12 @@ const mainRouter = () => (
 );
 
 let styles = {};
-
 styles.fill = {
   position: "absolute",
+  top: "112px",
   left: 0,
   right: 0,
-  top: "112px",
-  bottom: 0,
+  zIndex: 10,
 };
 
 export default MainRouter;

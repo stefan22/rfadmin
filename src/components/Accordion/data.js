@@ -3,18 +3,18 @@ const accordionData = [
     heading: "Protected:& Not pages",
     title: "Home/ Account, Admin & Signout",
     content:
-      "Register/signin to access Home, Account and Admin. Once registered, both pages: Home and Account become available. Admin page, however it's only reachable with a user role of Admin.",
+      "Register/signin to access Home, Account and Admin. Once registered, both pages: Home and Account become available. Admin page, however it's only reachable with a user role of admin.",
   },
   {
     title: "Dashboard, Signin/ Signup pages",
     content:
-      "Similar to Dashboard, Signup and Signin are shared pages. Signin out off Dashboard will not redirect back to Signin, but signing out from Account page, it will. This is because protected routes aren't accessible without an account..",
+      "Similar to Dashboard, Signup and Signin are shared pages. Signin out off Dashboard will not redirect back to Signin, but signing out from Account page, it will. This is because like Home and Admin pages, it's a protected route.",
   },
   {
     heading: "Firebase Component",
     title: "Firebase class",
     content:
-      "It contains all of the Firebase configuration needed in order to access the realtime database and built-in authentication methods/ functionality. This can also be done with a back-end service using GC functions. (See Chat App).",
+      "It contains all of the Firebase configuration needed in order to access the realtime database and built-in authentication methods/ functionality.",
   },
   {
     title: "React Context API",

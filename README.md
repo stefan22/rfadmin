@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About this project:
-- too soon (just started)
+-  Starter Admin Application with React and Firebase...
 - link
   + https://rfadmin-a0f32.web.app/
 

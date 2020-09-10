@@ -5,7 +5,7 @@ import DashboardMainContent from "./DashboardMainContent";
 import DashboardSideCol from "./DashboardSideCol";
 import { desktopAnimation } from "./DashboardAnimation";
 
-import * as db  from "../../helpers/constants";
+import * as db from "../../helpers/constants";
 
 // styles
 import "./styles.scss";
