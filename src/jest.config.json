@@ -1,5 +1,16 @@
 {
-  "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
-  }
+  "setupFiles": ["<rootDir>/src/setupTests.js"],
+  "clearMocks": true,
+  "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+
+  "coverageDirectory": "coverage",
+  "moduleFileExtensions": ["js", "json", "jsx"],
+  "moduleDirectories": ["node_modules", "src"],
+  "testEnvironment": "jsdom",
+  "testMatch": [
+    "**/__tests__/**/*.js?(x)",
+    "**/?(*.)+(spec|test).js?(x)"
+  ],
+  "testPathIgnorePatterns": ["\\\\node_modules\\\\"],
+  "testURL": "http://localhost"
 }

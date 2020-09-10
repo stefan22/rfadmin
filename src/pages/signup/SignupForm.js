@@ -47,10 +47,11 @@ class SignupForm extends Component {
         });
       })
       .then(() => {
-        this.setState({ ...INITIAL_STATE });
+        this.setState({ ...INITIAL_STATE, username, email });
         return this.props.history.push({
           pathname: ROUTES.HOME,
           username,
+          email,
         });
       })
       .catch(error => {
