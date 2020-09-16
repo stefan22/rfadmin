@@ -57,6 +57,18 @@ describe("Signup comp", () => {
       let input = wrapper.find("form").childAt(1).props();
       expect(input.onChange).toBeDefined();
     });
+       // it("should update state when a value is input", () => {
+    //   let onSubmit;
+    //   const wrapper = mount(<SignupForm onSubmit={onSubmit} />);
+    //   const inputVal = wrapper.find("form").childAt(1);
+    //   const user = mockUser();
+    //   let x = inputVal.simulate("change", {
+    //     target: {
+    //       name: "username",
+    //       value: inputVal.value,
+    //     },
+    //   });
+    // });
  
   });
 });

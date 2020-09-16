@@ -98,7 +98,7 @@ class SigninForm extends Component {
 
 const SignUpLink = () => (
   <p className="dp-signup-link">
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to={ROUTES.SIGNUP}>Sign Up</Link>
   </p>
 );
 

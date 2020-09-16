@@ -19,7 +19,7 @@ const SignupPage = () => (
 const SignupLink = () => (
   <BrowserRouter>
     <p className="dp-signup-link">
-      Do you have an account? <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+      Do you have an account? <Link to={ROUTES.SIGNIN}>Sign In</Link>
     </p>
   </BrowserRouter>
 );

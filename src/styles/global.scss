@@ -143,8 +143,6 @@ button {
   }
 }
 
-
-
 @keyframes fade-out {
     from { opacity: 1 }
       to { opacity: 0 }
@@ -153,6 +151,30 @@ button {
 @keyframes fade-in {
     from { opacity: 0 }
       to { opacity: 1 }
+}
+
+
+@keyframes sideOut {
+    from { 
+      opacity: 1;
+      right: 0px;
+    }
+    to { 
+      opacity: 0 ;
+      right: -350px;
+    }
+}
+
+@keyframes sideIn {
+    from { 
+      opacity: 0;
+      right: -350px;
+    }
+
+      to { 
+        opacity: 1;
+        right: 0px;
+      }
 }
 
 

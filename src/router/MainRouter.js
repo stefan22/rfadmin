@@ -51,12 +51,12 @@ const mainRouter = () => (
                 />
                 <Route
                   exact
-                  path={ROUTES.SIGN_UP}
+                  path={ROUTES.SIGNUP}
                   component={SignupPage}
                 />
                 <Route
                   exact
-                  path={ROUTES.SIGN_IN}
+                  path={ROUTES.SIGNIN}
                   component={SigninPage}
                 />
                 <Route

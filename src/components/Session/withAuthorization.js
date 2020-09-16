@@ -11,7 +11,7 @@ const withAuthorization = isAdmin => Component => {
       this.subscribe = this.props.firebase.auth.onAuthStateChanged(
         authUser => {
           if (!isAdmin(authUser)) {
-            this.props.history.push(ROUTES.SIGN_IN);
+            this.props.history.push(ROUTES.SIGNIN);
           }
         },
       );
