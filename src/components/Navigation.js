@@ -6,16 +6,16 @@ import Hidden from "@material-ui/core/Hidden";
 import { AuthUserContext } from "../components/Session";
 // nav route comps
 import {
-  AdminRoutes,
-  RegRoutes,
-  RegMobileRoutes,
-  AdminMobileRoutes,
+  DesktopRoutes,
+  MobileRoutes,
 } from "../router/NavigationRouter";
 // icons
 import MenuIcon from "@material-ui/icons/Menu";
 // styles
 import { withStyles } from "@material-ui/core/styles";
 import theme from "../theme";
+
+import { regRoutes, admRoutes } from "../helpers/constants";
 
 const styles = {
   root: {
@@ -106,7 +106,6 @@ class Navigation extends Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this);
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -133,19 +132,14 @@ class Navigation extends Component {
                 `}
               >
                 <AuthUserContext.Consumer>
-                  {authUser =>
-                    authUser ? (
-                      <AdminMobileRoutes
-                        classes={classes}
-                        handleClick={this.handleClick}
-                      />
-                    ) : (
-                      <RegMobileRoutes
-                        classes={classes}
-                        handleClick={this.handleClick}
-                      />
-                    )
-                  }
+                  {authUser => (
+                    <MobileRoutes
+                      classes={classes}
+                      isAdmin={authUser ? true : false}
+                      isRoute={authUser ? admRoutes : regRoutes}
+                      handleClick={this.handleClick}
+                    />
+                  )}
                 </AuthUserContext.Consumer>
               </section>
             </Hidden>
@@ -153,13 +147,13 @@ class Navigation extends Component {
             <Hidden smDown>
               <section className={classes.navigationMenu}>
                 <AuthUserContext.Consumer>
-                  {authUser =>
-                    authUser ? (
-                      <AdminRoutes classes={classes} />
-                    ) : (
-                      <RegRoutes classes={classes} />
-                    )
-                  }
+                  {authUser => (
+                    <DesktopRoutes
+                      classes={classes}
+                      isAdmin={authUser ? true : false}
+                      isRoute={authUser ? admRoutes : regRoutes}
+                    />
+                  )}
                 </AuthUserContext.Consumer>
               </section>
             </Hidden>

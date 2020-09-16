@@ -103,6 +103,13 @@ button {
   position: relative;
 }
 
+@media screen and (max-width:768px) {
+  button.doSignOut {
+    display: flex;
+    padding: 0 1.75rem;
+  }
+}
+
 /* Page Group transition ------------------------------------------ */
 
 

@@ -10,6 +10,9 @@ export const ACCOUNT = "/account";
 export const PASSWORD_FORGET = "/password_forget";
 export const PASSWORD_RESET = "/password_reset";
 
+export const regRoutes = ["DASHBOARD", "SIGNUP", "SIGNIN"];
+export const admRoutes = ["DASHBOARD", "HOME", "ACCOUNT", "ADMIN"];
+
 /** Dashboard page */
 export const dbtitle = "Dashboard";
 export const dbsubstitle =
