@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { CircularProgress } from "@material-ui/core";
+import loading from "../images/load3.gif";
 
 const styles = theme => ({
   center: {
@@ -11,6 +11,15 @@ const styles = theme => ({
     transform: "translate(-50%,-50%)",
     textAlign: "center",
   },
+  loading: {
+    color: "#333",
+    fontSize: "1.25rem",
+    fontVariant: "all-petite-caps",
+  },
+  loadimg: {
+    width: "100%",
+    maxWidth: "150px",
+  }
 });
 
 class Loading extends Component {
@@ -18,7 +27,12 @@ class Loading extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.center}>
-        <CircularProgress />
+        <img
+          className={classes.loadimg}
+          src={loading}
+          alt="Loading"
+        />
+        <h3 className={classes.loading}>Loading</h3>
       </div>
     );
   }

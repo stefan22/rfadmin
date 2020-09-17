@@ -1,25 +1,25 @@
 import React from "react";
-import {
-  dbSide1,
-  dbSide2,
-  dbSide3,
-  dbSide4,
-} from "../../helpers/constants";
-
-const DashboardSideCol = ({ handleClick }) => (
+const DashboardSideCol = ({
+  handleClick,
+  side1,
+  side2,
+  side3,
+  side4,
+  className = "sidebar",
+}) => (
   <nav>
-    <ul onClick={handleClick}>
+    <ul className={className} onClick={handleClick}>
       <li>
-        <a href="#one">{dbSide1}</a>
+        <a href="#one">{side1}</a>
       </li>
       <li>
-        <a href="#two">{dbSide2}</a>
+        <a href="#two">{side2}</a>
       </li>
       <li>
-        <a href="#three">{dbSide3}</a>
+        <a href="#three">{side3}</a>
       </li>
       <li>
-        <a href="#four">{dbSide4}</a>
+        <a href="#four">{side4}</a>
       </li>
     </ul>
   </nav>
