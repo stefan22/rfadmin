@@ -1,10 +1,10 @@
 import React from "react";
 import SignupForm from "./SignupForm";
-
+import { spy } from "sinon";
 
 const mockUser = (
   user = {
-    username: "Joe",
+    name: "Joe",
     email: "joe@yahoo.com",
     password: "joe123",
     confirmPassword: "joe123",
@@ -57,18 +57,19 @@ describe("Signup comp", () => {
       let input = wrapper.find("form").childAt(1).props();
       expect(input.onChange).toBeDefined();
     });
-       // it("should update state when a value is input", () => {
-    //   let onSubmit;
-    //   const wrapper = mount(<SignupForm onSubmit={onSubmit} />);
-    //   const inputVal = wrapper.find("form").childAt(1);
-    //   const user = mockUser();
-    //   let x = inputVal.simulate("change", {
-    //     target: {
-    //       name: "username",
-    //       value: inputVal.value,
-    //     },
-    //   });
-    // });
- 
+    it("should update state when a username entered in input field", () => {
+      const handleChange = spy();
+      let user = mockUser();
+      const wrapper = mount(
+        <SignupForm handleChange={handleChange} />,
+      );
+      wrapper.find("form").simulate("change", {
+        target: {
+          name: "username",
+          value: user.username,
+        },
+      });
+      expect(wrapper.state().name).toBe(user.username);
+    });
   });
 });

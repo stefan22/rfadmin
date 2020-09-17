@@ -19,9 +19,7 @@ class SignupForm extends Component {
   }
 
   handleChange = ev => {
-    this.setState({
-      [ev.target.name]: ev.target.value,
-    });
+    return this.setState({ [ev.target.name]: ev.target.value });
   };
 
   handleSubmit = ev => {
