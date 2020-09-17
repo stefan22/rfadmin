@@ -54,8 +54,14 @@ describe("Signin comp", () => {
     it("should submit form with the right prop values", () => {
       const user = mockUser();
       let mockSubmit = jest.fn();
-      const wrapper = mount(<SigninForm handleSubmit={mockSubmit} />);
+      const wrapper = mount(<SigninForm onSubmit={mockSubmit} user={user} />);
       const form = wrapper.find("form");
+      mockSubmit(user);
+      wrapper.simulate("submit", { preventDefault: () => {} });
+      expect(mockSubmit).toHaveBeenLastCalledWith({
+        email: user.email,
+        password: user.password,
+      });
       expect(wrapper.state(user)).toEqual(mockSubmit(user));
     });
   });
