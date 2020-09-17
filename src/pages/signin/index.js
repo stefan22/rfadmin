@@ -115,4 +115,4 @@ const SigninFormWrapper = compose(
 
 export default SigninPage;
 
-export { SignUpLink };
+export { SignUpLink, SigninForm };

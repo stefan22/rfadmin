@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signin comp matches snapshot when no data entered 1`] = `
+<section
+  className="dp-signin"
+>
+  <div
+    className="signin-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="email"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <WithStyles(ForwardRef(Button))
+        color="default"
+        disabled={true}
+        type="submit"
+        variant="contained"
+      >
+        Signin
+      </WithStyles(ForwardRef(Button))>
+    </form>
+  </div>
+  <hr />
+</section>
+`;

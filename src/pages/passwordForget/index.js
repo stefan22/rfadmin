@@ -84,4 +84,4 @@ const PasswordForgetFormWrapper = compose(
 
 export default PasswordForget;
 
-export { PasswordForgetFormWrapper };
+export { PasswordForgetFormWrapper, PasswordForgetForm };

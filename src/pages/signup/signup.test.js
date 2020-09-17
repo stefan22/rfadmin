@@ -29,35 +29,30 @@ describe("Signup comp", () => {
     it("should have a <form /> element", () => {
       expect(wrapper.find("form").length).toBe(1);
     });
-    it("<form /> element should have a onSubmit attribute", () => {
+    it("should have a <form /> element with an onSubmit attribute", () => {
       expect(wrapper.find("form").props().onSubmit).toBeDefined();
     });
-    it("onSubmit attribute should be of type `function`", () => {
+    it("should have onSubmit attribute of type `function`", () => {
       let form = wrapper.find("form");
       expect(typeof form.props().onSubmit === "function").toBe(true);
     });
-    it("User field should have a <label /> and <input /> elements ", () => {
+    it("should have a user <label /> element and several <input /> elements within form ", () => {
       let form = wrapper.find("form");
       expect(form.childAt(0).type()).toBe("label");
       expect(form.childAt(1).type()).toBe("input");
     });
-    it("User input field have props of name: 'username', type:'text', placeholder: 'Name'", () => {
+    it("should have an <input />field with props of name equal to 'username', type:'text', placeholder: 'Name'", () => {
       let input = wrapper.find("form").childAt(1).props();
       expect(input.name).toBe("username");
       expect(input.placeholder).toBe("Name");
       expect(input.type).toBe("text");
     });
-    it("<input /> fields username and email should be both empty", () => {
-      let userInput = wrapper.find("form").childAt(1).props();
-      let emailInput = wrapper.find("form").childAt(3).props();
-      expect(userInput.value).toBe("");
-      expect(emailInput.value).toBe("");
-    });
-    it("<input /> element should have an onChange attribute", () => {
+
+    it("should have <input /> elements with onChange attributes attached", () => {
       let input = wrapper.find("form").childAt(1).props();
       expect(input.onChange).toBeDefined();
     });
-    it("should update state when a username entered in input field", () => {
+    it("should update state whenever a new value is entered into username field", () => {
       const handleChange = spy();
       let user = mockUser();
       const wrapper = mount(
@@ -71,5 +66,41 @@ describe("Signup comp", () => {
       });
       expect(wrapper.state().name).toBe(user.username);
     });
+
+    it("should submit form with the right prop values", () => {
+      const user = mockUser();
+      let mockSubmit = jest.fn();
+      const wrapper = mount(<SignupForm handleSubmit={mockSubmit} />);
+      const form = wrapper.find("form");
+      expect(wrapper.state(user)).toEqual(mockSubmit(user));
+    });
+  });
+
+   describe("initialisation state props type/values", () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<SignupForm />);
+    });
+    it("should have...", () => {
+    });
+    it(".. username prop of string/empty", () => {
+      expect(wrapper.state("username")).toBe("");
+    });
+    it(".. email prop of string/empty", () => {
+      expect(wrapper.state("email")).toBe("");
+    });
+    it(".. password prop of string/empty", () => {
+      expect(wrapper.state("password")).toBe(""); 
+    });
+    it(".. confirmPassword prop of string/empty", () => {
+      expect(wrapper.state("confirmPassword")).toBe("");
+    });
+    it(".. isAdmin prop of boolean/false", () => {
+        expect(wrapper.state("isAdmin")).toBe(false);
+    });
+    it(".. error prop set to null", () => {
+      expect(wrapper.state("error")).toBe(null);
+    });
+
   });
 });
