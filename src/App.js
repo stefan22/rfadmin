@@ -1,5 +1,4 @@
 import React from "react";
-import { withAuthentication } from "./components/Session";
 // comps
 import MainRouter from "./router/MainRouter";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -14,4 +13,4 @@ const App = () => (
   </ThemeProvider>
 );
 
-export default withAuthentication(App);
+export default App;

@@ -4,6 +4,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import { withAuthentication } from "../components/Session";
 import {
   CSSTransition,
   TransitionGroup,
@@ -102,4 +103,4 @@ styles.fill = {
   zIndex: 10,
 };
 
-export default MainRouter;
+export default withAuthentication(MainRouter);

@@ -6,6 +6,7 @@ export const SIGNIN = "/signin";
 export const SIGNOUT = "/signout";
 export const HOME = "/home";
 export const ADMIN = "/admin";
+export const ADMIN_DETAILS = "/admin/:id";
 export const ACCOUNT = "/account";
 export const PASSWORD_FORGET = "/password_forget";
 export const PASSWORD_RESET = "/password_reset";

@@ -1,20 +1,25 @@
 import React from "react";
+import { compose } from "recompose";
+import { ADMIN } from "../../helpers/roles";
 import { withAuthorization } from "../../components/Session";
 
-const AdminPage = props => {
-  let user = props.history.location.username;
-  let greet =
-    typeof user === "string"
-      ? user.charAt(0).toUpperCase() + user.slice(1, user.length)
-      : false;
+const isAdmin = authUser =>
+  !!authUser &&
+  authUser.roles !== undefined &&
+  authUser.roles[0] === ADMIN;
 
-  return (
-    <div className="dp-admin-wrapper">
-      <h1>Welcome {greet}</h1>
-    </div>
-  );
-};
+const AdminPage = () => (
+  <div>
+    <h1>Admin</h1>
+    <p>User needs to have a role set to admin in Firestore dB</p>
+    <p>User also needs to be signed in.</p>
 
-const isAdmin = authUser => authUser && authUser.isAdmin === true;
+    <h2>Home and account</h2>
+    <p>
+      These pages have firebase Auth; which it only allows
+      authenticated/signed in users access.
+    </p>
+  </div>
+);
 
-export default withAuthorization(isAdmin)(AdminPage);
+export default compose(withAuthorization(isAdmin))(AdminPage);

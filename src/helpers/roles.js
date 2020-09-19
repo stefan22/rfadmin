@@ -1,3 +1,3 @@
 /** Roles ------------------------------------------------- */
 
-export const ADMIN = "ADMIN";
+export const ADMIN = "admin";
