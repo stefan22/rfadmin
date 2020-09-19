@@ -9,7 +9,6 @@ import Accordion from "../../components/Accordion";
 import accordionData from "../../components/Accordion/data";
 // sidelinks & title & subtitle
 import * as db from "../../helpers/constants";
-import Loading from "../../components/Loading";
 
 // styles
 import "./styles.scss";
@@ -17,29 +16,26 @@ import "./styles.scss";
 class DashboardPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    this.state = { loading: true }; //forced w/timeout
   }
 
   componentDidMount() {
-    this.timeout = setTimeout(() => {
-      //forced timeout
-      this.setState({ loading: false });
-    }, 1500);
     const heading = this.heading;
     const sideCol = this.sideCol;
     const ele = this.ele;
     desktopAnimation(heading, sideCol, ele);
+    this.timeout = setTimeout(() => {
+      return this.setState({ loading: false });
+    }, 1000);
   }
 
   handleClick = e => e.preventDefault();
 
   componentWillUnmount() {
-    //remove timeout
     clearTimeout(this.timeout);
   }
 
   render() {
-    const { loading } = this.state;
     return (
       <div className="dp-landwrapper">
         <Grid container spacing={2}>
@@ -52,34 +48,32 @@ class DashboardPage extends Component {
             </div>
           </Grid>
 
-          {loading ? (
-            <Loading />
-          ) : (
-            <div className="dp-land-inner">
-              <section>
-                <Grid item xs={12} md={12} lg={2}>
-                  <div ref={sideCol => (this.sideCol = sideCol)}>
-                    <DashboardSideCol
-                      side1={db.side1}
-                      side2={db.side2}
-                      side3={db.side3}
-                      side4={db.side4}
-                      handleClick={this.handleClick}
-                    />
-                  </div>
-                </Grid>
+          <div className="dp-land-inner">
+            <section>
+              <Grid item xs={12} md={12} lg={2}>
+                <div ref={sideCol => (this.sideCol = sideCol)}>
+                  <DashboardSideCol
+                    side1={db.side1}
+                    side2={db.side2}
+                    side3={db.side3}
+                    side4={db.side4}
+                    loading={this.state.loading}
+                    handleClick={this.handleClick}
+                  />
+                </div>
+              </Grid>
 
-                <Grid item xs={12} md={12} lg={10}>
-                  <div ref={ele => (this.ele = ele)}>
-                    <DashboardMainContent
-                      item={Accordion}
-                      items={accordionData}
-                    />
-                  </div>
-                </Grid>
-              </section>
-            </div>
-          )}
+              <Grid item xs={12} md={12} lg={10}>
+                <div ref={ele => (this.ele = ele)}>
+                  <DashboardMainContent
+                    item={Accordion}
+                    items={accordionData}
+                    loading={this.state.loading}
+                  />
+                </div>
+              </Grid>
+            </section>
+          </div>
         </Grid>
       </div>
     );

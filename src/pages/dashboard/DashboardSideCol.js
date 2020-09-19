@@ -1,4 +1,5 @@
 import React from "react";
+
 const DashboardSideCol = ({
   handleClick,
   side1,

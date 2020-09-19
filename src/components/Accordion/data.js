@@ -43,6 +43,12 @@ const accordionData = [
     content:
       "List HOC to render these Accordion components. It takes two arguments: a function component named item and a data array called items.",
   },
+  {
+    heading: "Dashboard",
+    title: "HOC | withLoading component",
+    content:
+      "In DashboardMainContent component. When run using withLoading it returns the Loading component whenever loading is set to true in Dashboard; otherwise it renders this content component.",
+  },
 ];
 
 export default accordionData;

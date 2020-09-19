@@ -1,0 +1,33 @@
+@import "../../styles/vars";
+
+
+.loading-center {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	flex-direction: row;
+	position: relative;
+	flex-wrap: wrap;
+}
+
+
+.inner-loading {
+	justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+	position: absolute;
+	left: 0;
+}
+
+.loading-heading {
+	color: #333;
+	font-size: 1.25rem;
+	font-variant: all-petite-caps;
+}
+
+.loading-img {
+	width: 100%;
+  max-width: 150px;
+  margin: 5rem 0;
+}

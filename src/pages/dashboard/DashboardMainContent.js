@@ -1,6 +1,7 @@
 import React from "react";
 // hoc
 import List from "../../helpers/List";
+import { withLoading } from "../../components/loading";
 
 const DashboardMainContent = ({ item, items }) => (
   <article>
@@ -15,4 +16,4 @@ const DashboardMainContent = ({ item, items }) => (
   </article>
 );
 
-export default DashboardMainContent;
+export default withLoading(DashboardMainContent);

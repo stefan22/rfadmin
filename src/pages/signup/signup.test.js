@@ -18,12 +18,10 @@ describe("Signup comp", () => {
   });
 
   describe("form", () => {
-    let props, wrapper;
+    let mockSubmit, wrapper;
     beforeEach(() => {
-      props = {
-        handleSubmit: () => {},
-      };
-      wrapper = shallow(<SignupForm {...props} />);
+      mockSubmit = jest.fn();
+      wrapper = shallow(<SignupForm submit={mockSubmit} />);
     });
 
     it("should have a <form /> element", () => {
@@ -36,44 +34,197 @@ describe("Signup comp", () => {
       let form = wrapper.find("form");
       expect(typeof form.props().onSubmit === "function").toBe(true);
     });
-    it("should have a user <label /> element and several <input /> elements within form ", () => {
-      let form = wrapper.find("form");
-      expect(form.childAt(0).type()).toBe("label");
-      expect(form.childAt(1).type()).toBe("input");
-    });
-    it("should have an <input />field with props of name equal to 'username', type:'text', placeholder: 'Name'", () => {
-      let input = wrapper.find("form").childAt(1).props();
-      expect(input.name).toBe("username");
-      expect(input.placeholder).toBe("Name");
-      expect(input.type).toBe("text");
-    });
 
-    it("should have <input /> elements with onChange attributes attached", () => {
-      let input = wrapper.find("form").childAt(1).props();
-      expect(input.onChange).toBeDefined();
-    });
-    it("should update state whenever a new value is entered into username field", () => {
-      const handleChange = spy();
-      let user = mockUser();
-      const wrapper = mount(
-        <SignupForm handleChange={handleChange} />,
-      );
-      wrapper.find("form").simulate("change", {
-        target: {
-          name: "username",
-          value: user.username,
-        },
+    describe("Username", () => {
+      
+      it("should have a Username <label /> and <input /> elements", () => {
+        let form = wrapper.find("form");
+        expect(form.childAt(0).type()).toBe("label");
+        expect(form.childAt(1).type()).toBe("input");
       });
-      expect(wrapper.state().name).toBe(user.username);
-    });
 
-    it("should submit form with the right prop values", () => {
-      const user = mockUser();
-      let mockSubmit = jest.fn();
-      const wrapper = mount(<SignupForm handleSubmit={mockSubmit} />);
-      const form = wrapper.find("form");
-      expect(wrapper.state(user)).toEqual(mockSubmit(user));
+      it("should have name, type & placeholder attributes defined in its input field", () => {
+        let input = wrapper.find("form").childAt(1).props();
+        expect(input.name).toBe("username");
+        expect(input.placeholder).toBe("Name");
+        expect(input.type).toBe("text");
+      });
+      it("should have an onChange listener", () => {
+        let input = wrapper.find("form").childAt(1).props();
+        expect(input.onChange).toBeDefined();
+      });
+
+      it("should update state on changes called by onChange event", () => {
+        const mockEvent = {
+          target: {
+            name: "username",
+            value: mockUser().name,
+          }
+        }//mockEvent
+        const expected = {
+          username: "Joe",
+          email: "",
+          password:"",
+          confirmPassword:"",
+          error: null,
+          isAdmin: false,
+        }
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state()).toEqual(expected);
+
+      });
+
+    }); //username
+    
+    describe("Email", () => {
+      
+      it("should have an Email <label /> and <input /> elements", () => {
+        let form = wrapper.find("form");
+        expect(form.childAt(2).type()).toBe("label");
+        expect(form.childAt(3).type()).toBe("input");
+      });
+
+      it("should have name, type & placeholder attributes defined in its input field", () => {
+        let input = wrapper.find("form").childAt(3).props();
+        expect(input.name).toBe("email");
+        expect(input.placeholder).toBe("Email");
+        expect(input.type).toBe("email");
+      });
+      it("should have an onChange listener", () => {
+        let input = wrapper.find("form").childAt(3).props();
+        expect(input.onChange).toBeDefined();
+      });
+
+      it("should update state on changes called by onChange event", () => {
+        const mockEvent = {
+          target: {
+            name: "email",
+            value: mockUser().email,
+          }
+        }//mockEvent
+        const expected = {
+          username: "",
+          email: "joe@yahoo.com",
+          password:"",
+          confirmPassword:"",
+          error: null,
+          isAdmin: false,
+        }
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state()).toEqual(expected);
+
+      });
+
+    }); //email
+
+    describe("Password", () => {
+      
+      it("should have a Password <label /> and <input /> elements", () => {
+        let form = wrapper.find("form");
+        expect(form.childAt(4).type()).toBe("label");
+        expect(form.childAt(5).type()).toBe("input");
+      });
+
+      it("should have name, type & placeholder attributes defined in its input field", () => {
+        let input = wrapper.find("form").childAt(5).props();
+        expect(input.name).toBe("password");
+        expect(input.placeholder).toBe("Password");
+        expect(input.type).toBe("password");
+      });
+      it("should have an onChange listener", () => {
+        let input = wrapper.find("form").childAt(5).props();
+        expect(input.onChange).toBeDefined();
+      });
+
+      it("should update state on changes called by onChange event", () => {
+        const mockEvent = {
+          target: {
+            name: "password",
+            value: mockUser().password,
+          }
+        }//mockEvent
+        const expected = {
+          username: "",
+          email: "",
+          password:"joe123",
+          confirmPassword:"",
+          error: null,
+          isAdmin: false,
+        }
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state()).toEqual(expected);
+
+      });
+
+    }); //password
+
+    describe("Confirm Password", () => {
+      
+      it("should have a Confirm Password <label /> and <input /> elements", () => {
+        let form = wrapper.find("form");
+        expect(form.childAt(6).type()).toBe("label");
+        expect(form.childAt(7).type()).toBe("input");
+      });
+
+      it("should have name, type & placeholder attributes defined in its input field", () => {
+        let input = wrapper.find("form").childAt(7).props();
+        expect(input.name).toBe("confirmPassword");
+        expect(input.placeholder).toBe("Confirm Password");
+        expect(input.type).toBe("password");
+      });
+      it("should have an onChange listener", () => {
+        let input = wrapper.find("form").childAt(7).props();
+        expect(input.onChange).toBeDefined();
+      });
+
+      it("should update state on changes called by onChange event", () => {
+        const mockEvent = {
+          target: {
+            name: "confirmPassword",
+            value: mockUser().confirmPassword,
+          }
+        }//mockEvent
+        const expected = {
+          username: "",
+          email: "",
+          password:"",
+          confirmPassword:"joe123",
+          error: null,
+          isAdmin: false,
+        }
+        wrapper.instance().handleChange(mockEvent);
+        expect(wrapper.state()).toEqual(expected);
+
+      });
+
+    }); //confirmPassword
+
+    it("should call submit with the correct params", (done) => {
+      wrapper.setState({
+        username: "joe",
+        email: "moe",
+        password: 123456789,
+        confirmPassword: 123456789
+      });
+
+      const expected = {
+        username: "joe",
+        email: "moe",
+        password: 123456789,
+        confirmPassword: 123456789,
+      };
+
+      const mockPreventDefault = jest.fn();
+      const mockEvent = {
+        preventDefault: mockPreventDefault
+      };
+      wrapper.instance().handleSubmit(mockEvent);
+      expect(mockSubmit).toHaveBeenCalledWith(expected);
+      done();
     });
+    
+
+
   });
 
    describe("initialisation state props type/values", () => {
