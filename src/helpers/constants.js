@@ -20,10 +20,26 @@ export const substitle =
   "Landing page open to signed and non-signed-in users alike";
 
 /* Dashboard side col */
-export const side1 = "Protected pages";
-export const side2 = "Section 2";
-export const side3 = "Section 3";
-export const side4 = "Section 4";
+export const sides = [
+  {
+    name: "Protected pages",
+    to: "protected",
+  },
+  {
+    name: "Section 2",
+    to: "section2",
+  },
+
+  {
+    name: "Section 3",
+    to: "section3",
+  },
+
+  {
+    name: "Section 4",
+    to: "section4",
+  },
+];
 
 /* Other ----------------------------------------- 
 -

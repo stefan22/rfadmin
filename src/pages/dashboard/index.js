@@ -53,10 +53,7 @@ class DashboardPage extends Component {
               <Grid item xs={12} md={12} lg={2}>
                 <div ref={sideCol => (this.sideCol = sideCol)}>
                   <DashboardSideCol
-                    side1={db.side1}
-                    side2={db.side2}
-                    side3={db.side3}
-                    side4={db.side4}
+                    sides={db.sides}
                     loading={this.state.loading}
                     handleClick={this.handleClick}
                   />
