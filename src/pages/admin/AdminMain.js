@@ -12,12 +12,13 @@ const AdminMain = props => {
       <section className="admin-users">
         {props.users.map(itm => (
           <ul key={itm.uid}>
-            <li>{itm.created}</li>
-            <li>{itm.email}</li>
-            <li>{itm.emailVerified}</li>
-            <li>{itm.lastSignedIn}</li>
-            <li>{itm.uid}</li>
-            <li>{itm.username}</li>
+            <li>Username: {itm.username}</li>
+            <li>Email: {itm.email}</li>
+            <li>
+              Email verified: {itm.emailVerified ? "Yes" : "No"}
+            </li>
+            <li>Last signed: {itm.lastSignedIn}</li>
+            <li>Created: {itm.created}</li>
           </ul>
         ))}
       </section>

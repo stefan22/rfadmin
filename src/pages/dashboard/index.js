@@ -35,7 +35,7 @@ class DashboardPage extends Component {
     clearTimeout(this.timeout);
   }
 
-  render() {
+  render() { 
     return (
       <div className="dp-landwrapper">
         <Grid container spacing={2}>

@@ -5,6 +5,8 @@ import { compose } from "recompose";
 import { withFirebase } from "../../components/Firebase";
 import "./styles.scss";
 
+import GoogleSignIn from "../../components/googleSignIn/GoogleSignIn";
+
 import * as ROUTES from "../../helpers/constants";
 
 const SigninPage = () => (
@@ -52,7 +54,6 @@ class SigninForm extends Component {
   };
 
   render() {
-    //console.log(this);
     const { email, password, error } = this.state;
 
     const isInvalid = password === "" || email === "";
@@ -91,6 +92,12 @@ class SigninForm extends Component {
           </form>
         </div>
         <hr />
+
+        <section className="social-wrapper">
+          <div className="thirdparty-providers">
+            <GoogleSignIn />
+          </div>
+        </section>
       </section>
     );
   }

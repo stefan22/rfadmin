@@ -10,11 +10,26 @@ const withAuthorization = isAdmin => Component => {
     componentDidMount() {
       this.subscribe = this.props.firebase.onAuthUserListener(
         authUser => {
+          let dbUser, user;
           if (!isAdmin(authUser)) {
             this.props.history.push(ROUTES.SIGNIN);
           }
+          this.props.firebase
+            .doGetUser(authUser.uid)
+            .get()
+            .then(doc => {
+              dbUser = doc.data();
+            });
+          user = {
+            uid: authUser.uid,
+            email: authUser.email,
+            ...dbUser,
+          };
+          this.setState({ authUser: user });
         },
+
         () => this.props.history.push(ROUTES.SIGNIN),
+        this.setState({ authUser: null }),
       );
     }
     componentWillUnmount() {

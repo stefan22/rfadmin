@@ -56,7 +56,6 @@ class SignupForm extends Component {
   };
 
   render() {
-    //console.log(this);
     const {
       username,
       email,
