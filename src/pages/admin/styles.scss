@@ -1,0 +1,45 @@
+@import "../../styles/vars.scss";
+
+.admin-wrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  .inner-loading {
+    top: 45%;
+  }
+}
+
+.admin-maincontent {
+  width: 96%;
+  margin: 0 auto;
+  .admin-users {
+    margin: 3rem 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    ul {
+      margin: 1rem 0;
+      width: 48%;
+      list-style: none;
+      background: lighten($navigationBg, 20%);
+      padding: 1rem 0;
+      @media screen and (max-width: 560px) {
+        width: 100% !important;
+      }
+      @media screen and (min-width: 1281px) {
+        width: 22%;
+      }
+
+      li {
+        text-align: center;
+        padding: 0 1rem;
+        width: 100%;
+      }
+    }
+  }
+}

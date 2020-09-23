@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { compose } from "recompose";
 import { ADMIN } from "../../helpers/roles";
 import { withAuthorization } from "../../components/Session";
+import { withFirebase } from "../../components/Firebase";
+import AdminMain from "./AdminMain";
 
 const isAdmin = authUser =>
   !!authUser &&
@@ -12,26 +14,35 @@ class AdminPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
       users: [],
     };
   }
 
-  render() {
-    console.log(this);
-    return (
-      <div>
-        <h1>Admin</h1>
-        <p>User needs to have a role set to admin in Firestore dB</p>
-        <p>User also needs to be signed in.</p>
+  componentDidMount() {
+    this.props.firebase
+      .doGetUsers()
+      .get()
+      .then(qs => {
+        const data = qs.docs.map(doc => doc.data());
+        return this.setState({ users: data, loading: false });
+      });
+  }
 
-        <h2>Home and account</h2>
-        <p>
-          These pages have firebase Auth; which it only allows
-          authenticated/signed in users access.
-        </p>
-      </div>
+  render() {
+    return (
+      <section className="admin-wrapper">
+        {!!this.state.users && (
+          <AdminMain
+            loading={this.state.loading}
+            users={this.state.users}
+          />
+        )}
+      </section>
     );
   }
 }
-export default compose(withAuthorization(isAdmin))(AdminPage);
+export default compose(
+  withAuthorization(isAdmin),
+  withFirebase,
+)(AdminPage);

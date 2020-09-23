@@ -26,7 +26,7 @@ class DashboardPage extends Component {
     desktopAnimation(heading, sideCol, ele);
     this.timeout = setTimeout(() => {
       return this.setState({ loading: false });
-    }, 1000);
+    }, 750);
   }
 
   handleClick = e => e.preventDefault();
