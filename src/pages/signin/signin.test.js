@@ -1,5 +1,6 @@
 import React from "react";
 import { SigninForm } from "./";
+import Firebase from "../../components/Firebase";
 import { spy } from "sinon";
 
 const mockUser = (
@@ -86,4 +87,48 @@ describe("Signin comp", () => {
       expect(wrapper.state("error")).toBe(null);
     });
   });
+
+   describe("Firebase", () => {
+    let auth, mockSubmit, wrapper;
+    beforeAll(async () => {
+      auth = new Firebase();
+      await auth;
+    });
+    beforeEach(async () => {
+      await auth.doSignOut();
+    });
+
+      it("should throw an Error when 'doSignInWithEmailAndPassword' with wrong password", async () => {
+        let error = "";
+        try {
+          await auth.doSignInWithEmailAndPassword(
+            "mario2224@gmail.com",
+            "rabbit123",
+          );
+        } catch (err) {
+          error = err.toString();
+        }
+        expect(error).toEqual(
+          "Error: The password is invalid or the user does not have a password.",
+        );
+        auth.doSignOut();
+      });
+
+    it("should login when 'doSignInWithEmailAndPassword' with right credentials", async () => {
+       
+      let user = await auth.doSignInWithEmailAndPassword(
+        "mario2224@gmail.com",
+            "123456",
+      );
+
+      expect(user.user).toBeTruthy();
+      expect(user.user.email).toEqual("mario2224@gmail.com");
+    });
+
+
+
+  }); //des Firebase
+
+
+
 });

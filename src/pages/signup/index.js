@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter, BrowserRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // comps
 import SignupForm from "./SignupForm";
 import { compose } from "recompose";
@@ -17,11 +17,10 @@ const SignupPage = () => (
 );
 
 const SignupLink = () => (
-  <BrowserRouter>
-    <p className="dp-signup-link">
-      Do you have an account? <Link to={ROUTES.SIGNIN}>Sign In</Link>
-    </p>
-  </BrowserRouter>
+  <p className="dp-signup-link">
+    Do you have an account? <Link to={ROUTES.SIGNIN}>Sign In</Link>
+  </p>
+
 );
 
 const SignupFormWrapper = compose(

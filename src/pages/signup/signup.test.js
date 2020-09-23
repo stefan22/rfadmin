@@ -1,5 +1,12 @@
 import React from "react";
 import SignupForm from "./SignupForm";
+// fb
+import config from "../../components/Firebase/config";
+import app from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import Firebase from "../../components/Firebase";
+
 import { spy } from "sinon";
 
 const mockUser = (
@@ -36,7 +43,6 @@ describe("Signup comp", () => {
     });
 
     describe("Username", () => {
-      
       it("should have a Username <label /> and <input /> elements", () => {
         let form = wrapper.find("form");
         expect(form.childAt(0).type()).toBe("label");
@@ -59,25 +65,22 @@ describe("Signup comp", () => {
           target: {
             name: "username",
             value: mockUser().name,
-          }
-        }//mockEvent
+          },
+        }; //mockEvent
         const expected = {
           username: "Joe",
           email: "",
-          password:"",
-          confirmPassword:"",
+          password: "",
+          confirmPassword: "",
           error: null,
           isAdmin: false,
-        }
+        };
         wrapper.instance().handleChange(mockEvent);
         expect(wrapper.state()).toEqual(expected);
-
       });
-
     }); //username
-    
+
     describe("Email", () => {
-      
       it("should have an Email <label /> and <input /> elements", () => {
         let form = wrapper.find("form");
         expect(form.childAt(2).type()).toBe("label");
@@ -100,25 +103,22 @@ describe("Signup comp", () => {
           target: {
             name: "email",
             value: mockUser().email,
-          }
-        }//mockEvent
+          },
+        }; //mockEvent
         const expected = {
           username: "",
           email: "joe@yahoo.com",
-          password:"",
-          confirmPassword:"",
+          password: "",
+          confirmPassword: "",
           error: null,
           isAdmin: false,
-        }
+        };
         wrapper.instance().handleChange(mockEvent);
         expect(wrapper.state()).toEqual(expected);
-
       });
-
     }); //email
 
     describe("Password", () => {
-      
       it("should have a Password <label /> and <input /> elements", () => {
         let form = wrapper.find("form");
         expect(form.childAt(4).type()).toBe("label");
@@ -141,25 +141,22 @@ describe("Signup comp", () => {
           target: {
             name: "password",
             value: mockUser().password,
-          }
-        }//mockEvent
+          },
+        }; //mockEvent
         const expected = {
           username: "",
           email: "",
-          password:"joe123",
-          confirmPassword:"",
+          password: "joe123",
+          confirmPassword: "",
           error: null,
           isAdmin: false,
-        }
+        };
         wrapper.instance().handleChange(mockEvent);
         expect(wrapper.state()).toEqual(expected);
-
       });
-
     }); //password
 
-    describe("Confirm Password", () => {
-      
+    describe("Confirm Password upon", () => {
       it("should have a Confirm Password <label /> and <input /> elements", () => {
         let form = wrapper.find("form");
         expect(form.childAt(6).type()).toBe("label");
@@ -182,58 +179,28 @@ describe("Signup comp", () => {
           target: {
             name: "confirmPassword",
             value: mockUser().confirmPassword,
-          }
-        }//mockEvent
+          },
+        }; //mockEvent
         const expected = {
           username: "",
           email: "",
-          password:"",
-          confirmPassword:"joe123",
+          password: "",
+          confirmPassword: "joe123",
           error: null,
           isAdmin: false,
-        }
+        };
         wrapper.instance().handleChange(mockEvent);
         expect(wrapper.state()).toEqual(expected);
-
       });
-
     }); //confirmPassword
-
-    it("should call submit with the correct params", (done) => {
-      wrapper.setState({
-        username: "joe",
-        email: "moe",
-        password: 123456789,
-        confirmPassword: 123456789
-      });
-
-      const expected = {
-        username: "joe",
-        email: "moe",
-        password: 123456789,
-        confirmPassword: 123456789,
-      };
-
-      const mockPreventDefault = jest.fn();
-      const mockEvent = {
-        preventDefault: mockPreventDefault
-      };
-      wrapper.instance().handleSubmit(mockEvent);
-      expect(mockSubmit).toHaveBeenCalledWith(expected);
-      done();
-    });
-    
-
-
   });
 
-   describe("initialisation state props type/values", () => {
+  describe("initialisation state props type/values", () => {
     let wrapper;
     beforeEach(() => {
       wrapper = shallow(<SignupForm />);
     });
-    it("should have...", () => {
-    });
+    it("should have...", () => {});
     it(".. username prop of string/empty", () => {
       expect(wrapper.state("username")).toBe("");
     });
@@ -241,17 +208,43 @@ describe("Signup comp", () => {
       expect(wrapper.state("email")).toBe("");
     });
     it(".. password prop of string/empty", () => {
-      expect(wrapper.state("password")).toBe(""); 
+      expect(wrapper.state("password")).toBe("");
     });
     it(".. confirmPassword prop of string/empty", () => {
       expect(wrapper.state("confirmPassword")).toBe("");
     });
     it(".. isAdmin prop of boolean/false", () => {
-        expect(wrapper.state("isAdmin")).toBe(false);
+      expect(wrapper.state("isAdmin")).toBe(false);
     });
     it(".. error prop set to null", () => {
       expect(wrapper.state("error")).toBe(null);
     });
-
   });
+
+  describe("Firebase", () => {
+    let auth, mockSubmit, wrapper;
+    beforeAll(async () => {
+      auth = new Firebase();
+      await auth;
+    });
+    beforeEach(async () => {
+      await auth.doSignOut();
+    });
+
+    it("should throw an Error when 'doCreateUserWithEmailAndPassword' without an actual email address", async () => {
+      let error = "";
+      try {
+        await auth.doCreateUserWithEmailAndPassword(
+          "hellorabbit",
+          "rabbit123",
+        );
+      } catch (err) {
+        error = err.toString();
+      }
+      expect(error).toEqual(
+        "Error: The email address is badly formatted.",
+      );
+      auth.doSignOut();
+    });
+  }); //des Firebase
 });

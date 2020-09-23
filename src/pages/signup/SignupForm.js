@@ -52,9 +52,7 @@ class SignupForm extends Component {
           email,
         });
       })
-      .catch(error => {
-        this.setState({ error });
-      });
+      .catch(error => this.setState({ error }));
   };
 
   render() {
