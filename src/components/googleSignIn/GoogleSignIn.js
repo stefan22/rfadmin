@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { withFirebase } from "../Firebase";
 import { compose } from "recompose";
-import Button from "@material-ui/core/Button";
+import { Button, Grid } from "@material-ui/core";
 import * as ROUTES from "../../helpers/constants";
 
 import GTranslateIcon from "@material-ui/icons/GTranslate";
@@ -41,19 +41,23 @@ class GoogleSignIn extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Button
-          type="submit"
-          size="large"
-          variant="contained"
-          color="default"
-          startIcon={<GTranslateIcon />}
-        >
-          Signin with Google
-        </Button>
+      <Grid container spacing={4}>
+        <Grid item xs={12}>
+          <form onSubmit={this.handleSubmit}>
+            <Button
+              type="submit"
+              size="large"
+              variant="contained"
+              color="primary"
+              startIcon={<GTranslateIcon />}
+            >
+              Signin with Google
+            </Button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+            {error && <p>{error.message}</p>}
+          </form>
+        </Grid>
+      </Grid>
     );
   }
 }

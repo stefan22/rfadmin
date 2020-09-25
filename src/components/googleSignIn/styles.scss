@@ -1,17 +1,25 @@
+@import "../../styles/vars.scss";
+
 .social-wrapper {
-	background: url("../../images/soc2bg.jpeg") repeat center 750px;
-	background-color: rgba(0,0,0,.5);
 	z-index: 0;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	height: 150px;
+	height: auto;
+	h4 {
+		font-size: $h4;
+		color: darken($formBrdr, 20%);
+		margin: 1rem 0 2rem;
+	}
+	h5 {
+		color: $black;
+	}
 }
 
 .thirdparty-providers {
-	max-width: 350px;
-	margin: 0 auto;
+	width: 100%;
+	max-width: 380px;
 	button {
 		z-index: 10;
 		padding: .75rem 1.25rem;

@@ -13,8 +13,10 @@ const SigninPage = () => (
   <div className="dp-signin-wrapper">
     <h1>Signin Page</h1>
     <SigninFormWrapper />
-    <SignUpLink />
-    <PasswordForgetLink />
+    <div className="signin-links">
+      <SignUpLink />
+      <PasswordForgetLink />
+    </div>
   </div>
 );
 
@@ -95,6 +97,8 @@ class SigninForm extends Component {
 
         <section className="social-wrapper">
           <div className="thirdparty-providers">
+            <h4>OR</h4>
+            <h5>Sign in with your Google Account</h5>
             <GoogleSignIn />
           </div>
         </section>

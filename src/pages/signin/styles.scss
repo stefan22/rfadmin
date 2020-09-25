@@ -6,7 +6,6 @@
 	flex-direction: column;
 	width: 100%;
 	min-height: calc(100vh - 152px);
-	margin-bottom: 3rem;
 	padding: 0 1rem;
 	h1 {
 		font-size: $h2;
@@ -47,3 +46,10 @@ form {
 	}
 }
 
+.signin-links {
+	margin: 1rem 0;
+}
+.dp-signup-link a, .dp-passwordforget-link a {
+	color: $pri;
+	text-decoration: underline;
+}
