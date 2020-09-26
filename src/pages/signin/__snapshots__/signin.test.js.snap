@@ -45,5 +45,20 @@ exports[`Signin comp matches snapshot when no data entered 1`] = `
     </form>
   </div>
   <hr />
+  <section
+    className="social-wrapper"
+  >
+    <div
+      className="thirdparty-providers"
+    >
+      <h4>
+        OR
+      </h4>
+      <h5>
+        Sign in with your Google Account
+      </h5>
+      <withRouter() />
+    </div>
+  </section>
 </section>
 `;

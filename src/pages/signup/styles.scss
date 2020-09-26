@@ -5,12 +5,14 @@
 	flex-direction: column;
 	width: 100%;
 	min-height: calc(100vh - 152px);
-	margin-bottom: 3rem;
 	padding: 0 1rem;
+	
 	h1 {
 		font-size: $h2;
+		margin: 3rem 0 0 0;
 		@media screen and (min-width: 850px) {
 			font-size: $h1;
+			margin: 0;
 		}
 	}
 
@@ -81,4 +83,34 @@ form {
 hr {
   border: 1px solid $formBg;
   margin: 1rem 0;
+}
+
+
+.banner-wrapper {
+	padding: 0 1rem;
+	overflow: hidden;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	transform: translate(0,-5vh);
+  height: 100%;
+	.img2 {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .20);
+    display: flex;
+    width: 100%;
+		height: auto;
+    background-size: cover;
+		@media screen and (min-width: 1024px) {
+			transform: scale(.875);
+			
+		}
+	}
+
+}
+
+
+
+
+.dp-signup-link {
+	margin-bottom: 1rem;
 }

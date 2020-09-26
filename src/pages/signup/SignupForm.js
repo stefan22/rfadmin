@@ -119,7 +119,6 @@ class SignupForm extends Component {
             {error && <p>{error.message}</p>}
           </form>
         </div>
-        <hr />
       </section>
     );
   }
