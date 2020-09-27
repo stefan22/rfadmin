@@ -16,6 +16,7 @@ const SignupPage = () => (
       <Grid item xs={12} md={12} lg={6}>
         <div className="banner-wrapper">
           <img
+            alt="side banner"
             className="img2"
             src={sideBanner}
             width={910}

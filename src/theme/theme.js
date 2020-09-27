@@ -21,7 +21,7 @@ const palette = {
     white: grey[50],
     lightblack: grey[700],
     footerBg: grey[200],
-    navigationBg: grey[400],
+    navigationBg: "#949292",
     formFbg: blue[50],
   },
   boxShadows: {

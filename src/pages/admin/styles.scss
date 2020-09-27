@@ -27,7 +27,6 @@
       width: 48%;
       list-style: none;
       background: lighten($navigationBg, 20%);
-      padding: 1rem 0;
       @media screen and (max-width: 560px) {
         width: 100% !important;
       }

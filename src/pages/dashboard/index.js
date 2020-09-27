@@ -26,7 +26,7 @@ class DashboardPage extends Component {
     desktopAnimation(heading, sideCol, ele);
     this.timeout = setTimeout(() => {
       return this.setState({ loading: false });
-    }, 750);
+    }, 1500);
   }
 
   handleClick = e => e.preventDefault();
@@ -35,7 +35,7 @@ class DashboardPage extends Component {
     clearTimeout(this.timeout);
   }
 
-  render() { 
+  render() {
     return (
       <div className="dp-landwrapper">
         <Grid container spacing={2}>
@@ -51,7 +51,10 @@ class DashboardPage extends Component {
           <div className="dp-land-inner">
             <section>
               <Grid item xs={12} md={12} lg={2}>
-                <div ref={sideCol => (this.sideCol = sideCol)}>
+                <div
+                  className="dp-sidewrap"
+                  ref={sideCol => (this.sideCol = sideCol)}
+                >
                   <DashboardSideCol
                     sides={db.sides}
                     loading={this.state.loading}
