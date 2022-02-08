@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+# It worked fine while hosted with FB/GCP - new hosting link GCP and Firestore db CRUD function/methods name think have also changed
+
+***Repo Stays***.  💠 🎆 👍. 💠 🎆 👍  💠 🎆 👍
+
 
 ## About this project:
 -  Starter Admin Application with React and Firebase...
