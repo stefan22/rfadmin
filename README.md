@@ -1,6 +1,6 @@
 
 
-# It worked fine while hosted with FB/GCP - new hosting link GCP and Firestore db CRUD function/methods name think have also changed
+##### It worked fine while hosted with FB/GCP - new hosting link GCP and Firestore db CRUD function/methods name think have also changed
 
 ***Repo Stays***.  💠 🎆 👍. 💠 🎆 👍  💠 🎆 👍
 
