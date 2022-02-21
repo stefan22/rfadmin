@@ -1,7 +1,6 @@
 import React from "react";
 import { SigninForm } from "./";
 import Firebase from "../../components/Firebase";
-import { spy } from "sinon";
 
 const mockUser = (
   user = {

@@ -85,7 +85,7 @@ const styles = {
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    this.mobileRef = React.createRef(null);
+    this.mobileRef = React.createRef();
     this.state = {
       mobileOpen: false,
     };

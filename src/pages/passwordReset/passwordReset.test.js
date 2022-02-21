@@ -1,13 +1,8 @@
 import React from "react";
 import PasswordResetForm from "./";
-import { spy } from "sinon";
 
-const mockUser = (
-  user = {
-    password: 123456789,
-    confirmPassword: 123456789,
-  },
-) => user;
+
+
 
 describe("Password Reset comp", () => {
   it("matches snapshot when no data entered", () => {

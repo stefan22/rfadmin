@@ -6,7 +6,7 @@ import "./styles.scss";
 class Accordion extends Component {
   constructor(props) {
     super(props);
-    this.content = React.createRef(null);
+    this.content = React.createRef();
     this.state = {
       active: "",
       height: "0px",

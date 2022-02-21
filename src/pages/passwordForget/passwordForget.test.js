@@ -1,6 +1,6 @@
 import React from "react";
 import { PasswordForgetForm } from "./";
-import { spy } from "sinon";
+
 
 const mockUser = (
   user = {

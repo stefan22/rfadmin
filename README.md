@@ -1,14 +1,28 @@
+[![DeepScan grade](https://deepscan.io/api/teams/16862/projects/20189/branches/544273/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16862&pid=20189&bid=544273) &nbsp;
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https:/github.com/stefan22/rfadmin.git) &nbsp; ![GitHub last commit](https://img.shields.io/github/last-commit/stefan22/rfadmin?color=red&style=flat-square) &nbsp; [![npm version](https://badge.fury.io/js/react.svg)](https://badge.fury.io/js/react)
 
+<br />
 
 
-
+# RFAdmin Dashboard
 
 
 ## About this project:
--  Starter Admin Application with React and Firebase...
-- link
-  + https://rfadmin-a0f32.web.app/
+
+An Admin dashboard created with React, ES6, Firebase, Sass, Material UI, GSAP, Jest, Enzyme, and Styled components. User access to pages depend on whether a user is signed in or not. It is a starting template that it can be used to put together a full-blown client-server architecture project.
+
+- Authentication: signup, signin and signout, password reset, password forgotten
+- Route guards to protect against unauthenticated users
+- Users/roles managed with Firebase Firestore database.
+
+
+## Firebase
+
+Firebase used to connect React application to a database, to authenticate and register users as well as setting up user access.    
+It requires a Firebase account for database, SDK and CLI. 
+
+
+<br />
 
 
 ## Available Scripts

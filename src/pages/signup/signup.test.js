@@ -1,13 +1,9 @@
 import React from "react";
 import SignupForm from "./SignupForm";
-// fb
-import config from "../../components/Firebase/config";
-import app from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import Firebase from "../../components/Firebase";
 
-import { spy } from "sinon";
 
 const mockUser = (
   user = {
